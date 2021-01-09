@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "jsx": "react",
+    "jsx": "react-jsx",
     "module": "esnext",
     "noImplicitAny": true,
     "outDir": "./build/",

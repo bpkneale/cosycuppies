@@ -13,16 +13,24 @@ body {
  * https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=F48FB1
  */
 .primary {
-  color: #f48fb1;
+  /* color: #f48fb1; */
   background-color: #f48fb1;
 }
 
 .primary-light {
-  color: #ffc1e3;
+  /* color: #ffc1e3; */
   background-color: #ffc1e3;
 }
 
 .primary-dark {
-  color: #bf5f82;
+  /* color: #bf5f82; */
   background-color: #bf5f82;
+}
+
+.bg {
+  background-color: #f5f5f5;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Dancing Script', cursive;
 }
