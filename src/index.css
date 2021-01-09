@@ -17,8 +17,16 @@ body {
   background-color: #f48fb1;
 }
 
+.hover-primary:hover {
+  border-color: #f48fb1;
+}
+
 .primary-light {
   /* color: #ffc1e3; */
+  background-color: #ffc1e3;
+}
+
+.hover-primary-light-bg:hover {
   background-color: #ffc1e3;
 }
 
