@@ -24,6 +24,7 @@ class AboutPage extends React.Component<Props> {
             <section>
                 <h3>Website</h3>
                 <p>Website designed by Cosy Designs. Copyright {DateTime.local().year}, all rights reserved</p>
+                <p>This website makes use of free icons and images from https://www.stockio.com</p>
             </section>
         </div>
     }
