@@ -12,7 +12,9 @@ import Banner from './layout/banner';
 import Contact from './pages/contact';
 import Cakes from './pages/cakes';
 import Cupcakes from './pages/cupcakes';
+import { Cupcake } from "./pages/cupcake";
 import AndMore from './pages/andmore';
+import { NotFound } from './pages/notfound';
 
 export default function App() {
   return (
@@ -21,6 +23,9 @@ export default function App() {
         <Banner />
         <div className="content bg">
           <Switch>
+            <Route path="/cupcakes/:cupcake">
+              <Cupcake />
+            </Route>
             <Route path="/cupcakes">
               <Cupcakes />
             </Route>
@@ -35,6 +40,9 @@ export default function App() {
             </Route>
             <Route path="/contact">
               <Contact />
+            </Route>
+            <Route path="/not-found">
+              <NotFound />
             </Route>
             <Route path="/">
               <Home />
