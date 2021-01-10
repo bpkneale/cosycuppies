@@ -4,7 +4,9 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect,
+  useLocation
 } from "react-router-dom";
 import About from './pages/about';
 import Home from './pages/home';

@@ -1,0 +1,5 @@
+
+a.up-button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

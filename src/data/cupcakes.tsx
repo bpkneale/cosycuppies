@@ -1,6 +1,7 @@
 import { PreviewProps } from "../components/preview";
 
 enum CupcakeLinks {
+    EnchantedForest = "enchanted-forest",
     BabyBlue = "baby-blue",
     Nude = "nude",
     Lavender = "lavender",
@@ -12,6 +13,12 @@ export type CupcakePreview = PreviewProps & {
 }
 
 export const CupcakePreviews: CupcakePreview[] = [
+    {
+        title: "Enchanted Forest",
+        imageSrc: "/assets/cupcakes/box-enchanted-forest.jpg",
+        link: CupcakeLinks.EnchantedForest,
+        description: "A whimsical mix of colours and butterflies"
+    },
     {
         title: "Baby Blue",
         imageSrc: "/assets/cupcakes/box-babyblue.jpg",

@@ -5,11 +5,16 @@ div.preview-container {
     flex-wrap: wrap;
 }
 
+a.preview {
+    text-decoration: none;
+    color: black;
+}
+
 div.preview {
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     height: 20em;
     width: 20em;
     margin: 0.5em;
@@ -28,7 +33,6 @@ div.preview > h3 {
 }
 
 div.preview > img {
-    height: 100%;
     width: 100%;
     overflow: hidden;
     border-radius: 1.0em;

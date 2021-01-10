@@ -2,6 +2,7 @@ import React from "react"
 import { connect } from "react-redux";
 import { Redirect } from "react-router";
 import { CupcakeConfiguration } from "../components/cupcakeconfiguration";
+import { UpButton } from "../components/upbutton";
 import { Lookup } from "../data/cupcakes";
 import { getTopLocation } from "../utils/location"
 import "./cupcake.css"
@@ -27,7 +28,10 @@ class CupcakeUnc extends React.Component<Props> {
             return <Redirect to="/not-found" />
         }
         return <div className="cupcake">
-            <h2>{cc.title}</h2>
+            <div>
+                <UpButton />
+                <h2>{cc.title}</h2>
+            </div>
             <div>
                 <section>
                     <img src={cc.imageSrc} alt={`A cupcake of style ${cc.title}`}></img>
