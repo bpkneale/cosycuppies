@@ -30,7 +30,7 @@ class CupcakeUnc extends React.Component<Props> {
             <h2>{cc.title}</h2>
             <div>
                 <section>
-                    <img src={cc.imageSrc}></img>
+                    <img src={cc.imageSrc} alt={`A cupcake of style ${cc.title}`}></img>
                 </section>
                 <section>
                     <p>{cc.description}</p>
