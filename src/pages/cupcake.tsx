@@ -28,15 +28,16 @@ class CupcakeUnc extends React.Component<Props> {
             return <Redirect to="/not-found" />
         }
         return <div className="cupcake">
-            <div>
+            <div className="cupcake-nav">
                 <UpButton />
                 <h2>{cc.title}</h2>
+                <span></span>
             </div>
             <div>
-                <section>
+                <section className="cupcake-images">
                     <img src={cc.imageSrc} alt={`A cupcake of style ${cc.title}`}></img>
                 </section>
-                <section>
+                <section className="cupcake-detail">
                     <p>{cc.description}</p>
                     <CupcakeConfiguration />
                 </section>

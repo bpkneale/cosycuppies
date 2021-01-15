@@ -1,6 +1,7 @@
 div.cupcake {
     display: flex;
     flex-flow: column;
+    flex-grow: 1;
 }
 
 div.cupcake > h2 {
@@ -15,4 +16,21 @@ div.cupcake > div {
 div.cupcake > div > section {
     display: flex;
     margin: 1em;
+}
+
+div.cupcake > div.cupcake-nav {
+    margin: 0.5em;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div.cupcake > div.cupcake-nav > * {
+    margin: 0em;
+}
+
+section.cupcake-detail {
+    display: flex;
+    flex-flow: column;
 }

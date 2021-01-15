@@ -2,6 +2,16 @@ div.cupcake-conf {
     display: flex;
 }
 
-div.frosting-flavours {
-    
+div.cupcake-conf > form > div {
+    margin: 1em;
+}
+
+div.cupcake-conf div.frosting-flavours {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+}
+
+div.cupcake-conf div.amount > label {
+    margin-left: 1em;
 }
