@@ -1,6 +1,7 @@
 import { DateTime } from "luxon";
 import React from "react"
 import { connect } from "react-redux";
+import "./common.css"
 
 type ComponentProps = {
 }
@@ -17,7 +18,7 @@ const ExternalLink = (href: string) => <a href={href}>{href}</a>
 
 class AboutPage extends React.Component<Props> {
     render() {
-        return <div>
+        return <div className="text-page">
             <h2>About</h2>
             <section>
                 <h3>Stephanie's Cosy Cuppies</h3>
