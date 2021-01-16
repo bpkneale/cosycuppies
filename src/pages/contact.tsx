@@ -13,13 +13,15 @@ type DispatchProps = {
 
 type Props = ComponentProps & StateProps & DispatchProps;
 
+const MailTo = (email: string) => <a href={`mailto:${email}`}>{email}</a>
+
 class Contact extends React.Component<Props> {
     render() {
         return <div className="contact text-page">
             <section>
                 <h2>Contact</h2>
                 <p>For all enquiries please contact Stephanie</p>
-                <p>stephanie@cosycuppies.com.au</p>
+                {MailTo("stephanie@cosycuppies.com.au")}
                 <h2>ABN</h2>
                 <p>88 239 232 322</p>
             </section>

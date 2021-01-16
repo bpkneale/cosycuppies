@@ -15,7 +15,7 @@ type Props = ComponentProps & StateProps & DispatchProps;
 class Cakes extends React.Component<Props> {
     render() {
         return <div>
-            <p>Cakes coming soon!</p>
+            <h2 className="centre">Cakes coming soon!</h2>
         </div>
     }
 }

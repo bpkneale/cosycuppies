@@ -3,3 +3,7 @@
         margin-left: 2em;
     }
 }
+
+div.text-page {
+    flex-flow: column;
+}

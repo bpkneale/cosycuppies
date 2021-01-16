@@ -46,3 +46,11 @@ h1 {
 h2, h3, h4 {
   font-family: 'Kaushan Script', cursive;
 }
+
+h1.centre,
+h2.centre,
+h3.centre,
+h4.centre {
+  text-align: center;
+  width: 100%;
+}
