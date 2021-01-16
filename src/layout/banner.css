@@ -19,6 +19,56 @@
     }
 }
 
+@media screen and (max-width: 1024px) {
+    div.banner {
+        display: flex;
+    }
+
+    div.banner h1 {
+        font-size: 1.2em;
+        margin-left: 0.5em;
+    }
+
+    div.banner div.nav-drawer {
+        position: fixed;
+        display: flex;
+        flex-flow: column;
+        width: 70vw;
+        height: 100vh;
+        transition: all 0.5s ease;
+        z-index: 5;
+    }
+
+    div.banner > div.navigation > a {
+        border-bottom: 1px solid #ffffff;
+        padding-bottom: 0.5em;
+    }
+
+    div.banner div.nav-drawer.open {
+        border-right: 1px solid;
+    }
+
+    div.banner div.nav-drawer.closed {
+        transform: translate(-70vw);
+    }
+
+    div.banner span.burger-menu {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 3em;
+        height: 3em;
+    }
+
+    div.banner span.burger-menu > span.burgoin {
+        width: 60%;
+        height: 0.1em;
+        background-color: black;
+        border-radius: 10px;
+    }
+}
+
 div.banner > div.navigation > a.active {
     text-decoration: underline;
     /* font-weight: bold; */

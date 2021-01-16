@@ -21,7 +21,7 @@ import { NotFound } from './pages/notfound';
 export default function App() {
   return (
     <Router>
-      <div className="app">
+      <div className="app" id="app">
         <Banner />
         <div className="content bg">
           <Switch>

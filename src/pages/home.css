@@ -1,3 +1,9 @@
+@media screen and (max-width: 1024px) {
+    .carousel .thumbs-wrapper {
+        display: none;
+    }
+}
+
 div.home {
     display: flex;
     align-items: center;
@@ -7,6 +13,7 @@ div.home {
 div.home > div.carousel-container {
     display: flex;
     width: 90%;
+    max-width: 90vw;
 }
 
 div.home > div.carousel-container img {
@@ -21,6 +28,7 @@ div.home > div.carousel-container img {
 .carousel .slide img {
     max-height: 60vh;
     width: auto;
+    border-radius: 5px;
 }
 
 .carousel .carousel-status {

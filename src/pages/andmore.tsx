@@ -15,7 +15,7 @@ type Props = ComponentProps & StateProps & DispatchProps;
 class AndMore extends React.Component<Props> {
     render() {
         return <div>
-
+            <p>Macarons and other sweets coming soon!</p>
         </div>
     }
 }
