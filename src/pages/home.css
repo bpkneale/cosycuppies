@@ -1,0 +1,37 @@
+div.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.home > div.carousel-container {
+    display: flex;
+    width: 90%;
+}
+
+div.home > div.carousel-container img {
+    max-width: 100%;
+}
+
+.carousel .thumb img {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.carousel .slide img {
+    max-height: 60vh;
+    width: auto;
+}
+
+.carousel .carousel-status {
+    display: none;
+}
+
+.carousel .control-dots {
+    display: none;
+}
+
+.carousel li.slide,
+.carousel li.slide > div {
+    background: transparent;
+}
