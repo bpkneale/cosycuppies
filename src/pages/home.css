@@ -6,8 +6,9 @@
 
 div.home {
     display: flex;
+    flex-flow: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 div.home > div.carousel-container {

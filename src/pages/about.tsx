@@ -23,6 +23,7 @@ class AboutPage extends React.Component<Props> {
             <section>
                 <h3>Stephanie's Cosy Cuppies</h3>
                 <p>Stephanie is a home baker passionate about making beautiful cupcakes that taste as great as they look</p>
+                <p>Stephanie bakes delicious treats for any occasion and is based in The Vines, Perth WA</p>
             </section>
             <section>
                 <h3>Socials</h3>
