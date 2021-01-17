@@ -1,3 +1,23 @@
+@media screen and (min-width: 1024px) {
+    div.cupcake-details {
+        flex-flow: row;
+    }
+
+    div.cupcake-details img {
+        max-width: 50vw;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    div.cupcake-details {
+        flex-flow: column;
+    }
+
+    div.cupcake-details img {
+        max-width: 80vw;
+    }
+}
+
 div.cupcake {
     display: flex;
     flex-flow: column;
@@ -8,14 +28,13 @@ div.cupcake > h2 {
     text-align: center;
 }
 
-div.cupcake > div {
-    display: flex;
-    flex-flow: row;
-}
-
 div.cupcake > div > section {
     display: flex;
     margin: 1em;
+}
+
+div.cupcake-details {
+    display: flex;
 }
 
 div.cupcake > div.cupcake-nav {
