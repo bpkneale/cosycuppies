@@ -6,7 +6,7 @@ div.cupcake-conf > form > div {
     margin: 1em;
 }
 
-div.cupcake-conf div.frosting-flavours {
+div.cupcake-conf div.flavours {
     display: flex;
     flex-flow: column;
     flex-wrap: wrap;
