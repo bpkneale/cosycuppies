@@ -1,9 +1,25 @@
 import Redux from "redux";
-import { CosyState } from "../state/cosy";
+import { CartContents, CosyState } from "../state/cosy";
+import * as Actions from "../actions/cosy";
 
-const defaultState: CosyState = {}
+const defaultState: CosyState = {
+    cart: []
+}
 
-const reducer = (state: CosyState = defaultState, action: Redux.AnyAction) => {
+const reducer = (state: CosyState = defaultState, action: Actions.CosyAction) => {
+    let cart: CartContents = state.cart;
+    switch(action.type) {
+        case Actions.ADD_TO_CART:
+            cart = [...state.cart];
+            if(action.item) {
+                cart.push(action.item)
+            }
+            return {
+                ...state,
+                cart
+            }
+    }
+
     return {
         ...state
     };

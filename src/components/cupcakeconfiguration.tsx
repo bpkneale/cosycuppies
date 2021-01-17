@@ -1,7 +1,9 @@
 import React from "react"
+import Redux from "redux"
 import { connect } from "react-redux";
 import { FrostingFlavour, FrostingFlavours } from "../data/frostingflavours"
 import { CupcakeFlavour, CupcakeFlavours } from "../data/cupcakeflavours"
+import { addToCart as addToCartAction } from "../actions/cosy"
 import "./cupcakeconfiguration.css"
 
 type ComponentProps = {
@@ -11,6 +13,7 @@ type StateProps = {
 }
 
 type DispatchProps = {
+    addToCart: (item: {}) => void;
 }
 
 type Props = ComponentProps & StateProps & DispatchProps;
@@ -25,7 +28,11 @@ type State = {
 class CupcakeConfigurationUnc extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
-        this.state = {
+        this.state = CupcakeConfigurationUnc.defaultState();
+    }
+
+    static defaultState() {
+        return {
             amount: 12,
             cupcakeFlavour: CupcakeFlavours[0],
             frostingFlavour: FrostingFlavours[0],
@@ -34,7 +41,10 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
     }
 
     onSubmit(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+        const { addToCart } = this.props;
         event.preventDefault();
+        addToCart({ ...this.state })
+        this.setState(CupcakeConfigurationUnc.defaultState())
     }
 
     render() {
@@ -65,7 +75,7 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
                 </div>
                 <p>Other</p>
                 <div className="box">
-                    <input id="box" type="checkbox" onChange={() => this.setState({box: !box})} />
+                    <input id="box" type="checkbox" checked={box} onChange={() => this.setState({box: !box})} />
                     <label htmlFor="box">Cupcake box(es)</label>
                 </div>
                 <div>
@@ -76,10 +86,11 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
     }
 }
 
-const mapStateToProps = () => {
-}
+const mapStateToProps = () => ({
+})
 
-const mapDispatchToProps = () => {
-}
+const mapDispatchToProps = (dispatch: Redux.Dispatch) => ({
+    addToCart: (item: {}) => dispatch(addToCartAction(item))
+})
 
-export const CupcakeConfiguration = connect(mapStateToProps, mapDispatchToProps)(CupcakeConfigurationUnc);
+export const CupcakeConfiguration = connect<StateProps, DispatchProps, ComponentProps>(mapStateToProps, mapDispatchToProps)(CupcakeConfigurationUnc);
