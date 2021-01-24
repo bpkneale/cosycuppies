@@ -29,7 +29,11 @@ class HomePage extends React.Component<Props> {
                         <p>Customisable flavours, swirls, and more</p>
                     </div>
                     <div>
-                        <img src="/assets/carousel/3.jpg" />
+                        <img src="/assets/carousel/4.jpg" />
+                        <p>Perfect for birthdays, celebrations, and more</p>
+                    </div>
+                    <div>
+                        <img src="/assets/cakes/blue.jpg" />
                         <p>Not just cupcakes!</p>
                     </div>
                 </Carousel>

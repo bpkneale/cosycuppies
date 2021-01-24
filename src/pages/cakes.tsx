@@ -1,5 +1,7 @@
 import React from "react"
 import { connect } from "react-redux";
+import Preview from "../components/preview";
+import * as Data from "../data/cakes";
 
 type ComponentProps = {
 }
@@ -14,8 +16,9 @@ type Props = ComponentProps & StateProps & DispatchProps;
 
 class Cakes extends React.Component<Props> {
     render() {
-        return <div>
+        return <div className="coming-soon">
             <h2 className="centre">Cakes coming soon!</h2>
+            <img src={Data.Cakes[0].imageSrc} />
         </div>
     }
 }
