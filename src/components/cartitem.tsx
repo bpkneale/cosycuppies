@@ -26,8 +26,10 @@ const CupcakeCartItem = (item: States.CupcakeOrder) => {
         return <p>Unable to display item with ID: {item.id}</p>
     }
     return <React.Fragment>
-        <img src={cc.imageSrc} />
-        <div>
+        <div className="img-container">
+            <img src={cc.imageSrc} />
+        </div>
+        <div className="item-details">
             <p>{cc.title}</p>
             <p>Amount: {item.amount}</p>
             <p>Cupcake: {item.cupcakeFlavour.flavour}</p>
@@ -43,7 +45,7 @@ class CartItemUnc extends React.Component<Props> {
         return <div className="cart-item">
             {item.cupcake ? CupcakeCartItem(item.cupcake) : null}
             <div>
-                <p onClick={() => removeCartItem(index)}>X Remove</p>
+                <p onClick={() => removeCartItem(index)}>Remove</p>
             </div>
         </div>
     }

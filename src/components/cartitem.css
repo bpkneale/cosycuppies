@@ -1,4 +1,34 @@
 
+div.cart-item {
+    display: flex;
+    flex-flow: row;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 0.5em;
+}
+
+div.cart-item > div:not(.item-details) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em;
+}
+
+div.cart-item .img-container {
+    max-width: 25vw;
+}
+
 div.cart-item img {
-    max-width: 50%;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+div.cart-item .item-details {
+    display: flex;
+    flex-flow: column;
+}
+
+div.cart-item .item-details > p {
+    margin: 0.25em
 }
