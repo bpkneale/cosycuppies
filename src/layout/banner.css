@@ -94,6 +94,7 @@ div.banner > div.navigation > a:hover {
 
 div.banner {
     display: flex;
+    border-bottom: 1px solid;
 }
 
 div.banner h1 {

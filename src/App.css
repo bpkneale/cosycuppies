@@ -13,7 +13,7 @@ div.app {
 div.content {
   padding: 1em;
   display: flex;
-  flex-grow: 1;
+  overflow: auto;
 }
 
 div.content > div {

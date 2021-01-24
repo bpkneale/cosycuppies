@@ -39,7 +39,7 @@ class CupcakeUnc extends React.Component<Props> {
                 </section>
                 <section className="cupcake-detail">
                     <p>{cc.description}</p>
-                    <CupcakeConfiguration />
+                    <CupcakeConfiguration id={cc.link} />
                 </section>
             </div>
         </div>

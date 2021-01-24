@@ -1,0 +1,22 @@
+div.toast {
+    position: absolute;
+    bottom: 2em;
+    max-width: 90vw;
+    z-index: 5;
+    transition: all 1.0s;
+    border-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+div.toast > p {
+    margin: 1em;
+}
+
+div.toast:not(.fading) {
+    opacity: 1.0;
+}
+
+div.toast.fading {
+    opacity: 0.0;
+}

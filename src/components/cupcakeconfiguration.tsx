@@ -5,23 +5,25 @@ import { FrostingFlavour, FrostingFlavours } from "../data/frostingflavours"
 import { CupcakeFlavour, CupcakeFlavours } from "../data/cupcakeflavours"
 import { addToCart as addToCartAction } from "../actions/cosy"
 import "./cupcakeconfiguration.css"
+import { CartItem, CupcakeOrder } from "../state/cosy";
 
 type ComponentProps = {
+    id: string;
 }
 
 type StateProps = {
 }
 
 type DispatchProps = {
-    addToCart: (item: {}) => void;
+    addToCart: (item: CartItem) => void;
 }
 
 type Props = ComponentProps & StateProps & DispatchProps;
 
 type State = {
     amount: number;
-    cupcakeFlavour: CupcakeFlavour | undefined;
-    frostingFlavour: FrostingFlavour | undefined;
+    cupcakeFlavour: CupcakeFlavour;
+    frostingFlavour: FrostingFlavour;
     box: boolean;
 }
 
@@ -41,9 +43,16 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
     }
 
     onSubmit(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-        const { addToCart } = this.props;
+        const { id, addToCart } = this.props;
         event.preventDefault();
-        addToCart({ ...this.state })
+        const item = { ...this.state }
+        const order = {
+            cupcake: {
+                id,
+                ...item
+            }
+        }
+        addToCart(order)
         this.setState(CupcakeConfigurationUnc.defaultState())
     }
 
@@ -63,13 +72,13 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
                 </div>
                 <p>Cupcake flavour</p>
                 <div className="flavours">
-                    <select id="flavour" value={cupcakeFlavour?.flavour} onChange={a => this.setState({cupcakeFlavour: CupcakeFlavours.find(f => f.id === a.target.value)})}>
+                    <select id="flavour" value={cupcakeFlavour?.flavour} onChange={a => this.setState({cupcakeFlavour: CupcakeFlavours.find(f => f.id === a.target.value) ?? CupcakeFlavours[0]})}>
                         {CupcakeFlavours.map(f => <option value={f.id}>{f.flavour}</option>)}
                     </select>
                 </div>
                 <p>Frosting flavour</p>
                 <div className="flavours">
-                    <select id="flavour" value={frostingFlavour?.flavour} onChange={a => this.setState({frostingFlavour: FrostingFlavours.find(f => f.id === a.target.value)})}>
+                    <select id="flavour" value={frostingFlavour?.flavour} onChange={a => this.setState({frostingFlavour: FrostingFlavours.find(f => f.id === a.target.value) ?? FrostingFlavours[0]})}>
                         {FrostingFlavours.map(f => <option value={f.id}>{f.flavour}</option>)}
                     </select>
                 </div>
@@ -90,7 +99,7 @@ const mapStateToProps = () => ({
 })
 
 const mapDispatchToProps = (dispatch: Redux.Dispatch) => ({
-    addToCart: (item: {}) => dispatch(addToCartAction(item))
+    addToCart: (item: CartItem) => dispatch(addToCartAction(item))
 })
 
 export const CupcakeConfiguration = connect<StateProps, DispatchProps, ComponentProps>(mapStateToProps, mapDispatchToProps)(CupcakeConfigurationUnc);

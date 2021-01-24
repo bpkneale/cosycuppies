@@ -1,0 +1,4 @@
+div.shopping-cart {
+    display: flex;
+    flex-flow: column;
+}

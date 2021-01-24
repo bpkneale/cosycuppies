@@ -1,5 +1,7 @@
 import React from "react"
+import Redux from "redux"
 import { connect } from "react-redux";
+import { CosyState } from "../state/cosy";
 
 type ComponentProps = {
 }
@@ -12,18 +14,17 @@ type DispatchProps = {
 
 type Props = ComponentProps & StateProps & DispatchProps;
 
-class CartUnc extends React.Component<Props> {
+class TemplateUnc extends React.Component<Props> {
     render() {
         return <div>
-
         </div>
     }
 }
 
-const mapStateToProps = () => {
-}
+const mapStateToProps = (state: CosyState) => ({
+})
 
-const mapDispatchToProps = () => {
-}
+const mapDispatchToProps = (dispatch: Redux.Dispatch) => ({
+})
 
-export const Cart = connect(mapStateToProps, mapDispatchToProps)(CartUnc);
+export const Template = connect<StateProps, DispatchProps, ComponentProps, CosyState>(mapStateToProps, mapDispatchToProps)(TemplateUnc);

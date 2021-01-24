@@ -18,13 +18,15 @@ import { Cupcake } from "./pages/cupcake";
 import AndMore from './pages/andmore';
 import { NotFound } from './pages/notfound';
 import { Cart } from './pages/cart';
+import { Toast } from './layout/toast';
 
 export default function App() {
   return (
     <Router>
-      <div className="app" id="app">
+      <div className="app bg" id="app">
         <Banner />
-        <div className="content bg">
+        <Toast />
+        <div className="content">
           <Switch>
             <Route path="/cupcakes/:cupcake">
               <Cupcake />
