@@ -46,10 +46,10 @@ class CupcakeUnc extends React.Component<Props> {
     }
 }
 
-const mapStateToProps = () => {
-}
+const mapStateToProps = () => ({
+})
 
-const mapDispatchToProps = () => {
-}
+const mapDispatchToProps = () => ({
+})
 
 export const Cupcake = connect(mapStateToProps, mapDispatchToProps)(CupcakeUnc);

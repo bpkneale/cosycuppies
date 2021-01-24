@@ -72,14 +72,17 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
                 </div>
                 <p>Cupcake flavour</p>
                 <div className="flavours">
-                    <select id="flavour" value={cupcakeFlavour?.flavour} onChange={a => this.setState({cupcakeFlavour: CupcakeFlavours.find(f => f.id === a.target.value) ?? CupcakeFlavours[0]})}>
-                        {CupcakeFlavours.map(f => <option value={f.id}>{f.flavour}</option>)}
+                    <select id="flavour" value={cupcakeFlavour.id} onChange={a => {
+                            const val = CupcakeFlavours.find(f => f.id === a.target.value);
+                            this.setState({cupcakeFlavour: val ?? CupcakeFlavours[0]})}
+                        }>
+                        {CupcakeFlavours.map(f => <option key={f.id} value={f.id}>{f.flavour}</option>)}
                     </select>
                 </div>
                 <p>Frosting flavour</p>
                 <div className="flavours">
-                    <select id="flavour" value={frostingFlavour?.flavour} onChange={a => this.setState({frostingFlavour: FrostingFlavours.find(f => f.id === a.target.value) ?? FrostingFlavours[0]})}>
-                        {FrostingFlavours.map(f => <option value={f.id}>{f.flavour}</option>)}
+                    <select id="flavour" value={frostingFlavour.id} onChange={a => this.setState({frostingFlavour: FrostingFlavours.find(f => f.id === a.target.value) ?? FrostingFlavours[0]})}>
+                        {FrostingFlavours.map(f => <option key={f.id} value={f.id}>{f.flavour}</option>)}
                     </select>
                 </div>
                 <p>Other</p>

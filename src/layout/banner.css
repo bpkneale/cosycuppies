@@ -101,6 +101,6 @@ div.banner h1 {
     text-align: center;
 }
 
-div.banner img {
+div.banner > img {
     height: 100%;
 }

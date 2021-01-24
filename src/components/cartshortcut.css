@@ -1,3 +1,19 @@
+
+
+.cart-shortcut {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.cart-shortcut p {
+    margin: 0em;
+    margin-bottom: -0.5em;
+    color: black;
+}
+
 .cart-shortcut img {
     height: 2em;
     width: 2em;
