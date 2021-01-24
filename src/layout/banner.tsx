@@ -1,6 +1,7 @@
 import React from "react"
 import { connect } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
+import { CartShortcut } from "../components/cartshortcut";
 import { isMobileDevice } from "../utils/device"
 
 import "./banner.css"
@@ -27,6 +28,7 @@ const Links = (onClick?: () => void) => {
         <NavLink onClick={onClick} to="/cupcakes">Cupcakes</NavLink>
         <NavLink onClick={onClick} to="/cakes">Cakes</NavLink>
         <NavLink onClick={onClick} to="/and-more">And More!</NavLink>
+        <NavLink onClick={onClick} to="/cart">Cart</NavLink>
         <NavLink onClick={onClick} to="/about">About</NavLink>
         <NavLink onClick={onClick} to="/contact">Contact</NavLink>
     </React.Fragment>
@@ -73,15 +75,16 @@ class Banner extends React.Component<Props, State> {
                 <h1>Stephanie's cosy cuppies, and more!</h1>
             </div>
             {mobile ?
-            <div className={`primary-light navigation nav-drawer ${navOpen ? "open" : "closed"}`}>
-                {this.burgerMenu()}
-                {Links(() => this.setState({drawerOpen: false}))}
-            </div>
+                <div className={`primary-light navigation nav-drawer ${navOpen ? "open" : "closed"}`}>
+                    {this.burgerMenu()}
+                    {Links(() => this.setState({drawerOpen: false}))}
+                </div>
             :
-            <div className="navigation">
-                {Links()}
-            </div>
+                <div className="navigation">
+                    {Links()}
+                </div>
             }
+            <CartShortcut />
         </div>
     }
 }

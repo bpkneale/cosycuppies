@@ -17,6 +17,7 @@ import Cupcakes from './pages/cupcakes';
 import { Cupcake } from "./pages/cupcake";
 import AndMore from './pages/andmore';
 import { NotFound } from './pages/notfound';
+import { Cart } from './pages/cart';
 
 export default function App() {
   return (
@@ -42,6 +43,9 @@ export default function App() {
             </Route>
             <Route path="/contact">
               <Contact />
+            </Route>
+            <Route path="/cart">
+              <Cart />
             </Route>
             <Route path="/not-found">
               <NotFound />

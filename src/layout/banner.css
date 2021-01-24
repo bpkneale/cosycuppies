@@ -22,11 +22,11 @@
 @media screen and (max-width: 1024px) {
     div.banner {
         display: flex;
+        justify-content: space-between;
     }
 
     div.banner h1 {
         font-size: 1.2em;
-        margin-left: 0.5em;
     }
 
     div.banner div.nav-drawer {
@@ -67,11 +67,15 @@
         background-color: black;
         border-radius: 10px;
     }
+
+    div.banner > .cart-shortcut {
+        margin-right: 0.5em;
+    }
 }
 
 div.banner > div.navigation > a.active {
-    text-decoration: underline;
-    /* font-weight: bold; */
+    /* text-decoration: underline; */
+    font-weight: bold;
 }
 
 div.banner > div.navigation > a {
