@@ -2,6 +2,10 @@
     .carousel .thumbs-wrapper {
         display: none;
     }
+
+    div.home:first-child {
+        margin-top: 2em;
+    }
 }
 
 div.home {
