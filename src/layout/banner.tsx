@@ -70,8 +70,7 @@ class Banner extends React.Component<Props, State> {
         const { mobile, drawerOpen } = this.state;
         const navOpen = drawerOpen || !mobile;
         return <div className="primary-light banner">
-            {mobile ? this.burgerMenu() : null}
-            <img src="/assets/etc/Logo-crop-whitebg.png" alt="Logo"></img>
+            {mobile ? this.burgerMenu() : <img src="/assets/etc/Logo-crop-whitebg.png" alt="Logo"></img>}
             <div>
                 <h1>Stephanie's cosy cuppies, and more!</h1>
             </div>
