@@ -27,5 +27,5 @@
   },
   "include": [
     "src/**/*.tsx"
-  ]
+, "src/actions/cosy.ts"  ]
 }

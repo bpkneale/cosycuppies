@@ -18,7 +18,9 @@ class Cakes extends React.Component<Props> {
     render() {
         return <div className="coming-soon">
             <h2 className="centre">Cakes coming soon!</h2>
-            <img src={Data.Cakes[0].imageSrc} />
+            <div>
+                <img src={Data.Cakes[0].imageSrc} />
+            </div>
         </div>
     }
 }

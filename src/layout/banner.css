@@ -1,7 +1,7 @@
 @media screen and (min-width: 1024px) {
     div.banner {
         width: 100%;
-        height: 5em;
+        height: 10em;
         display: flex;
         flex-flow: row;
         justify-content: space-evenly;
@@ -16,6 +16,12 @@
         display: flex;
         align-items: center;
         padding-left: 1em;
+    }
+
+    div.banner img {
+        max-height: 80%;
+        align-self: center;
+        /* background-color: white; */
     }
 }
 

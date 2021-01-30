@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { CartContents, CosyState } from "../state/cosy";
 import { CartItem } from "../components/cartitem";
 import "./cart.css"
+import { SubmitCart } from "../components/submitcart";
 
 type ComponentProps = {
 }
@@ -22,8 +23,14 @@ class CartUnc extends React.Component<Props> {
         const { cart } = this.props;
         return <div className="shopping-cart">
             <h2>Shopping Cart</h2>
-            {cart.length === 0 ? <p>No items in cart</p> : null}
-            {cart.map((item, index) => <CartItem item={item} index={index} />)}
+            {cart.length === 0 ? 
+                <p>No items in cart</p> : 
+            <React.Fragment>
+                <SubmitCart />
+                <p>Cart items:</p>
+                {cart.map((item, index) => <CartItem item={item} index={index} />)}
+            </React.Fragment>
+            }
         </div>
     }
 }
