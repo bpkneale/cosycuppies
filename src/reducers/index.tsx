@@ -1,13 +1,14 @@
 import Redux from "redux";
 import { CartContents, CartItem, CosyState } from "../state/cosy";
 import * as Actions from "../actions/cosy";
+import { useSelector } from "react-redux";
 
-const defaultState: CosyState = {
+export const defaultState: CosyState = {
     cart: [],
     toast: undefined
 }
 
-const reducer = (state: CosyState = defaultState, action: Actions.CosyAction) => {
+export const rootReducer = (state: CosyState = defaultState, action: Actions.CosyAction) => {
     let cart: CartContents = state.cart;
     let toast: string | undefined = undefined;
     switch(action.type) {
@@ -45,5 +46,3 @@ const reducer = (state: CosyState = defaultState, action: Actions.CosyAction) =>
         ...state
     };
 }
-
-export default reducer;

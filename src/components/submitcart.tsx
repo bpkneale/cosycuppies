@@ -1,45 +1,38 @@
-import React from "react"
-import Redux from "redux"
-import { connect } from "react-redux";
-import { CosyState } from "../state/cosy";
+import { submitCart, cartSlice } from "../actions/api";
 import DatePicker from "react-datepicker";
+import { CartSubmit } from "../api/client";
+import { DateTime } from "luxon";
+import { AppDispatch, useAppDispatch, useAppState } from "../store/index";
 
-type ComponentProps = {
-}
+type Props = {};
 
-type StateProps = {
-}
+export const SubmitCart = (props: Props) => {
+    const cartContents = useAppState().cart;
+    const dispatch = useAppDispatch();
 
-type DispatchProps = {
-}
-
-type Props = ComponentProps & StateProps & DispatchProps;
-
-class SubmitCartUnc extends React.Component<Props> {
-    render() {
-        return <div className="submit-cart">
-            <p>To submit enquiry, please fill in below:</p>
-            <label>
-                E-mail Address
-                <input type="text" />
-            </label>
-            <label>
-                Date Required
-                {/* <DatePicker /> */}
-            </label>
-            <label>
-                
-                <input type="checkbox" />
-            </label>
-            <button type="submit">Submit Enquiry</button>
-        </div>
+    const onSubmit = () => {
+        const cart: CartSubmit = {
+            email: "",
+            requiredBy: DateTime.local(),
+            cart: cartContents
+        }
+        dispatch(submitCart(cart) as any)
     }
+
+    return <div className="submit-cart">
+        <p>To submit enquiry, please fill in below:</p>
+        <label>
+            E-mail Address
+            <input type="text" />
+        </label>
+        <label>
+            Date Required
+            {/* <DatePicker /> */}
+        </label>
+        <label>
+            
+            <input type="checkbox" />
+        </label>
+        <button type="submit" onClick={onSubmit}>Submit Enquiry</button>
+    </div>
 }
-
-const mapStateToProps = (state: CosyState) => ({
-})
-
-const mapDispatchToProps = (dispatch: Redux.Dispatch) => ({
-})
-
-export const SubmitCart = connect<StateProps, DispatchProps, ComponentProps, CosyState>(mapStateToProps, mapDispatchToProps)(SubmitCartUnc);
