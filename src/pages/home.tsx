@@ -25,8 +25,12 @@ class HomePage extends React.Component<Props> {
                         <p>Bespoke hand-made cupcakes for any occasion</p>
                     </div>
                     <div>
-                        <img src="/assets/carousel/2.jpg" />
+                        <img src="/assets/carousel/5.jpg" />
                         <p>Customisable flavours, swirls, and more</p>
+                    </div>
+                    <div>
+                        <img src="/assets/cupcakes/bouquet/1.JPG" />
+                        <p>A theme for any occassion</p>
                     </div>
                     <div>
                         <img src="/assets/carousel/4.jpg" />

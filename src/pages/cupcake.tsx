@@ -1,9 +1,10 @@
 import React from "react"
 import { connect } from "react-redux";
+import { Carousel } from "react-responsive-carousel";
 import { Redirect } from "react-router";
 import { CupcakeConfiguration } from "../components/cupcakeconfiguration";
 import { UpButton } from "../components/upbutton";
-import { Lookup } from "../data/cupcakes";
+import { CupcakePreview, Lookup } from "../data/cupcakes";
 import { getTopLocation } from "../utils/location"
 import "./cupcake.css"
 
@@ -22,6 +23,22 @@ class CupcakeUnc extends React.Component<Props> {
     componentDidMount() {
     }
 
+    renderCupcakeImages(cc: CupcakePreview) {
+        if(cc.carousel) {
+            return ( 
+                <div className="carousel-container">
+                    <Carousel className="carousel" autoPlay={true} infiniteLoop={true} interval={3000}>
+                        {cc.carousel.map(c => <div key={c}>
+                            <img src={c} alt={`A cupcake of style ${cc.title}`}></img>
+                        </div>)}
+                    </Carousel>
+                </div>
+            )
+        } else {
+            return <img src={cc.imageSrc} alt={`A cupcake of style ${cc.title}`}></img>
+        }
+    }
+
     render() {
         const cc = Lookup(getTopLocation())
         if(!cc) {
@@ -35,7 +52,7 @@ class CupcakeUnc extends React.Component<Props> {
             </div>
             <div className="cupcake-details">
                 <section className="cupcake-images">
-                    <img src={cc.imageSrc} alt={`A cupcake of style ${cc.title}`}></img>
+                    {this.renderCupcakeImages(cc)}
                 </section>
                 <section className="cupcake-detail">
                     <p>{cc.description}</p>

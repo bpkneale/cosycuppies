@@ -7,6 +7,7 @@ export type PreviewProps = {
     imageSrc: string;
     title: string;
     link: string;
+    carousel?: string[];
 }
 
 type ComponentProps = {
