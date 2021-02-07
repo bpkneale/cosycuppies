@@ -30,9 +30,14 @@
         display: flex;
         justify-content: space-between;
     }
+    
+    div.banner > div {
+        display: flex;
+    }
 
     div.banner h1 {
-        font-size: 1.2em;
+        font-size: 1em;
+        align-self: center;
     }
 
     div.banner div.nav-drawer {

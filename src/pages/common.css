@@ -18,3 +18,9 @@ div.coming-soon img {
     max-width: 100%;
     border-radius: 5px;
 }
+
+div.coming-soon > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
