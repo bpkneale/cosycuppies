@@ -25,6 +25,7 @@ type State = {
     cupcakeFlavour: CupcakeFlavour;
     frostingFlavour: FrostingFlavour;
     box: boolean;
+    extraInformation: string;
 }
 
 class CupcakeConfigurationUnc extends React.Component<Props, State> {
@@ -38,7 +39,8 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
             amount: 12,
             cupcakeFlavour: CupcakeFlavours[0],
             frostingFlavour: FrostingFlavours[0],
-            box: false
+            box: false,
+            extraInformation: ""
         }
     }
 
@@ -57,7 +59,7 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
     }
 
     render() {
-        const { amount, frostingFlavour, cupcakeFlavour, box } = this.state;
+        const { amount, frostingFlavour, cupcakeFlavour, box, extraInformation } = this.state;
         return <div className="cupcake-conf">
             <form>
                 <p>Cupcake options</p>
@@ -89,6 +91,10 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
                 <div className="box">
                     <input id="box" type="checkbox" checked={box} onChange={() => this.setState({box: !box})} />
                     <label htmlFor="box">Cupcake box(es)</label>
+                </div>
+                <p>Extra information (notes, customisation, etc)</p>
+                <div className="freetext">
+                    <textarea id="freetext" value={extraInformation} onChange={e => this.setState({extraInformation: e.target.value})} />
                 </div>
                 <div>
                     <button type="submit" onClick={this.onSubmit.bind(this)}>Add to cart</button>

@@ -1,9 +1,15 @@
 div.cupcake-conf {
     display: flex;
+    flex-grow: 1;
 }
 
-div.cupcake-conf > form > div {
-    margin: 1em;
+div.cupcake-conf > form {
+    display: flex;
+    flex-flow: column;
+}
+
+div.cupcake-conf > form > * {
+    margin: 0.5em;
 }
 
 div.cupcake-conf div.flavours {
@@ -14,4 +20,9 @@ div.cupcake-conf div.flavours {
 
 div.cupcake-conf div.amount > label {
     margin-left: 1em;
+}
+
+div.cupcake-conf textarea {
+    width: 100%;
+    min-height: 4em;
 }

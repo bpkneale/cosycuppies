@@ -68,7 +68,13 @@ export const CupcakePreviews: CupcakePreview[] = [
         title: "Nude",
         imageSrc: "/assets/cupcakes/box-nude.jpg",
         link: CupcakeLinks.Nude,
-        description: "Skin tone"
+        description: "A naturally beautiful and classic colour",
+        carousel: [
+            "/assets/cupcakes/nude/1.JPG",
+            "/assets/cupcakes/nude/2.JPG",
+            "/assets/cupcakes/nude/3.JPG",
+            "/assets/cupcakes/nude/4.JPG"
+        ]
     },
     {
         title: "Lavender",

@@ -8,16 +8,19 @@ export type CartItem = {
     cake?: CakeOrder;
 }
 
-export type CupcakeOrder = {
+export type BaseOrder = {
     id: string;
+    extraInformation: string;
+}
+
+export type CupcakeOrder = BaseOrder & {
     amount: number;
     cupcakeFlavour: CupcakeFlavour;
     frostingFlavour: FrostingFlavour;
     box: boolean;
 }
 
-export type CakeOrder = {
-    id: string;
+export type CakeOrder = BaseOrder & {
     amount: number;
     cupcakeFlavour: CupcakeFlavour;
     frostingFlavour: FrostingFlavour;
