@@ -7,6 +7,8 @@ const DefaultApiBase = "https://api.cosycuppies.com.au";
 export type CartSubmit = {
     email: string;
     requiredBy: luxon.DateTime;
+    delivery: boolean;
+    deliveryAddress: string;
     cart: CartContents;
 }
 

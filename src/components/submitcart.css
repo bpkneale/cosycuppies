@@ -1,0 +1,16 @@
+div.submit-cart {
+    display: flex;
+    flex-flow: column;
+}
+
+div.submit-cart > * {
+    margin: 0.5em;
+}
+
+div.submit-cart > label {
+    margin-bottom: 0.75em;
+}
+
+div.submit-cart > button {
+    margin-top: 2em;
+}

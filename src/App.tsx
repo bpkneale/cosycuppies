@@ -19,45 +19,49 @@ import AndMore from './pages/andmore';
 import { NotFound } from './pages/notfound';
 import { Cart } from './pages/cart';
 import { Toast } from './layout/toast';
+import { MuiPickersUtilsProvider } from "@material-ui/pickers"
+import LuxonUtils from '@date-io/luxon';
 
 export default function App() {
   return (
     <Router>
-      <div className="app bg" id="app">
-        <Banner />
-        <Toast />
-        <div className="content">
-          <Switch>
-            <Route path="/cupcakes/:cupcake">
-              <Cupcake />
-            </Route>
-            <Route path="/cupcakes">
-              <Cupcakes />
-            </Route>
-            <Route path="/cakes">
-              <Cakes />
-            </Route>
-            <Route path="/and-more">
-              <AndMore />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-            <Route path="/cart">
-              <Cart />
-            </Route>
-            <Route path="/not-found">
-              <NotFound />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
+      <MuiPickersUtilsProvider utils={LuxonUtils}>
+        <div className="app bg" id="app">
+          <Banner />
+          <Toast />
+          <div className="content">
+            <Switch>
+              <Route path="/cupcakes/:cupcake">
+                <Cupcake />
+              </Route>
+              <Route path="/cupcakes">
+                <Cupcakes />
+              </Route>
+              <Route path="/cakes">
+                <Cakes />
+              </Route>
+              <Route path="/and-more">
+                <AndMore />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/contact">
+                <Contact />
+              </Route>
+              <Route path="/cart">
+                <Cart />
+              </Route>
+              <Route path="/not-found">
+                <NotFound />
+              </Route>
+              <Route path="/">
+                <Home />
+              </Route>
+            </Switch>
+          </div>
         </div>
-      </div>
+      </MuiPickersUtilsProvider>
     </Router>
   );
 }

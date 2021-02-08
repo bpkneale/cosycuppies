@@ -23,14 +23,18 @@ class CartUnc extends React.Component<Props> {
         const { cart } = this.props;
         return <div className="shopping-cart">
             <h2>Shopping Cart</h2>
-            {cart.length === 0 ? 
-                <p>No items in cart</p> : 
-            <React.Fragment>
-                <SubmitCart />
-                <p>Cart items:</p>
-                {cart.map((item, index) => <CartItem item={item} index={index} />)}
-            </React.Fragment>
-            }
+            <div className="cart-container">
+                {cart.length === 0 ? 
+                    <p>No items in cart</p> : 
+                <React.Fragment>
+                    <SubmitCart />
+                    <div>
+                        <p>Cart items:</p>
+                        {cart.map((item, index) => <CartItem item={item} index={index} />)}
+                    </div>
+                </React.Fragment>
+                }
+            </div>
         </div>
     }
 }

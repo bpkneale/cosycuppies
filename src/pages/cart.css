@@ -1,4 +1,26 @@
+@media screen and (min-width: 1024px) {
+    div.cart-container {
+        flex-flow: row-reverse;
+        margin-right: auto;
+    }
+
+    div.cart-container > div {
+        margin: 1em;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    div.cart-container {
+        flex-flow: column;
+    }
+}
+
+
 div.shopping-cart {
     display: flex;
     flex-flow: column;
+}
+
+div.cart-container {
+    display: flex;
 }
