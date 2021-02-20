@@ -23,6 +23,13 @@
         align-self: center;
         /* background-color: white; */
     }
+
+    div.banner > div.title-nav-container {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -38,6 +45,7 @@
     div.banner h1 {
         font-size: 1em;
         align-self: center;
+        font-weight: 600;
     }
 
     div.banner div.nav-drawer {
@@ -84,22 +92,22 @@
     }
 }
 
-div.banner > div.navigation > a.active {
+div.banner div.navigation > a.active {
     /* text-decoration: underline; */
     font-weight: bold;
 }
 
-div.banner > div.navigation > a {
+div.banner div.navigation > a {
     text-decoration: none;
     color: black;
     margin: 0.5em;
 }
 
-div.banner > div.navigation > a::before {
+div.banner div.navigation > a::before {
     content: "🧁 "
 }
 
-div.banner > div.navigation > a:hover {
+div.banner div.navigation > a:hover {
     text-decoration: underline;
 }
 

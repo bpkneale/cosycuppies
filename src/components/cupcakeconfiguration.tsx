@@ -6,6 +6,9 @@ import { CupcakeFlavour, CupcakeFlavours } from "../data/cupcakeflavours"
 import { addToCart as addToCartAction } from "../actions/cosy"
 import "./cupcakeconfiguration.css"
 import { CartItem, CupcakeOrder } from "../state/cosy";
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import Button from '@material-ui/core/Button';
+
 
 type ComponentProps = {
     id: string;
@@ -97,7 +100,8 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
                     <textarea id="freetext" value={extraInformation} onChange={e => this.setState({extraInformation: e.target.value})} />
                 </div>
                 <div>
-                    <button type="submit" onClick={this.onSubmit.bind(this)}>Add to cart</button>
+                    <Button variant="contained" color="primary">Add to cart</Button>
+                    {/* <button type="submit" onClick={this.onSubmit.bind(this)}>Add to cart</button> */}
                 </div>
             </form>
         </div>

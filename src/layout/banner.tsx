@@ -66,26 +66,39 @@ class Banner extends React.Component<Props, State> {
         </span>
     }
 
-    render() {
-        const { mobile, drawerOpen } = this.state;
-        const navOpen = drawerOpen || !mobile;
+    renderMobile(navOpen: boolean) {
         return <div className="primary-light banner">
-            {mobile ? this.burgerMenu() : <img src="/assets/etc/Logo-crop-whitebg.png" alt="Logo"></img>}
+            {this.burgerMenu()}
             <div>
                 <h1>Stephanie's cosy cuppies, and more!</h1>
             </div>
-            {mobile ?
-                <div className={`primary-light navigation nav-drawer ${navOpen ? "open" : "closed"}`}>
-                    {this.burgerMenu()}
-                    {Links(() => this.setState({drawerOpen: false}))}
+            <div className={`primary-light navigation nav-drawer ${navOpen ? "open" : "closed"}`}>
+                {this.burgerMenu()}
+                {Links(() => this.setState({drawerOpen: false}))}
+            </div>
+            <CartShortcut />
+        </div>
+    }
+
+    renderDesktop() {
+        return <div className="primary-light banner">
+            <img src="/assets/etc/Logo-crop-whitebg.png" alt="Logo"></img>
+            <div className="title-nav-container">
+                <div>
+                    <h1>Stephanie's cosy cuppies, and more!</h1>
                 </div>
-            :
                 <div className="navigation">
                     {Links()}
                 </div>
-            }
+            </div>
             <CartShortcut />
         </div>
+    }
+
+    render() {
+        const { mobile, drawerOpen } = this.state;
+        const navOpen = drawerOpen || !mobile;
+        return mobile ? this.renderMobile(navOpen) : this.renderDesktop();
     }
 }
 

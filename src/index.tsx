@@ -5,11 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './store';
+import { MuiThemeProvider } from "@material-ui/core"
+import { Theme } from "./utils/theme"
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <MuiThemeProvider theme={Theme}>
+        <App />
+      </MuiThemeProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
