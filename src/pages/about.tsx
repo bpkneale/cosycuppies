@@ -48,7 +48,7 @@ class AboutPage extends React.Component<Props> {
                     </ul>
                 </section>
                 <section>
-                    <h4>Buttercream frosting</h4>
+                    <h4>Buttercream Frosting</h4>
                     <ul>
                         <li>Butter</li>
                         <li>Icing sugar</li>
