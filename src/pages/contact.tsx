@@ -20,9 +20,10 @@ class Contact extends React.Component<Props> {
         return <div className="contact text-page">
             <section>
                 <h2>Contact</h2>
+                <h3>Stephanie</h3>
                 <p>For all enquiries please contact Stephanie</p>
                 {MailTo("stephanie@cosycuppies.com.au")}
-                <h2>ABN</h2>
+                <h3>ABN</h3>
                 <p>88 239 232 322</p>
             </section>
         </div>

@@ -61,7 +61,7 @@ class ToastUnc extends React.Component<Props, OwnState> {
         if(sm === ToastState.Hidden || !message) {
             return null;
         }
-        return <div className={`toast primary ${sm === ToastState.Fade ? "fading" : ""}`}>
+        return <div className={`toast primary-light ${sm === ToastState.Fade ? "fading" : ""}`}>
             <p>{message}</p>
         </div>
     }

@@ -9,6 +9,7 @@ import "./submitcart.css"
 import { Button, TextField } from "@material-ui/core";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import PublishIcon from '@material-ui/icons/Publish';
 
 type Props = {};
 
@@ -36,9 +37,6 @@ export const SubmitCart = (props: Props) => {
     return <div className="submit-cart">
         <p>To submit enquiry, please fill in below:</p>
         <TextField color="secondary" required label="E-mail Address" onChange={e => setEmail(e.target.value)} />
-        {/* <label>E-mail Address:</label> */}
-        {/* <input type="text" value={email} onChange={e => setEmail(e.target.value)} /> */}
-        {/* <label>Date Required:</label> */}
         <KeyboardDatePicker
             color="secondary"
             label="Date Required"
@@ -64,18 +62,13 @@ export const SubmitCart = (props: Props) => {
             }
             label="Delivery"
         />
-        {/* <div>
-            <input id="delivery" type="checkbox" checked={delivery} onChange={e => setDelivery(e.target.checked)}/>
-            <label htmlFor="delivery">Delivery required</label>
-        </div> */}
         {delivery ? 
             <TextField color="secondary" required label="Delivery address" value={deliveryAddress} onChange={e => setDeliveryAddress(e.target.value)} />
-            // <React.Fragment>
-            //     <label>Delivery address</label>
-            //     <input type="text" value={deliveryAddress} onChange={e => setDeliveryAddress(e.target.value)} />
-            // </React.Fragment>
         : null}
-        <Button disabled={submitted} onClick={onSubmit} variant="contained" color="primary">Submit Enquiry</Button>
+        <Button disabled={submitted} onClick={onSubmit} variant="contained" color="primary">
+            <PublishIcon/>
+            <span>Submit Enquiry</span>
+        </Button>
         {submitted ? <p>Enquiry has been submitted, thank you!</p> : null}
     </div>
 }

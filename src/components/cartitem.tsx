@@ -50,7 +50,7 @@ class CartItemUnc extends React.Component<Props> {
                 <div className="cart-remove hover-primary-light-bg" onClick={() => removeCartItem(index)}>
                     <Button variant="contained" color="primary">
                         <RemoveShoppingCartIcon />
-                        <p>Remove</p>
+                        <span>Remove</span>
                     </Button>
                 </div>
             </div>

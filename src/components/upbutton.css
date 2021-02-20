@@ -1,5 +1,11 @@
 
-a.up-button:hover {
+div.up-button {
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.up-button:hover {
     text-decoration: underline;
 }

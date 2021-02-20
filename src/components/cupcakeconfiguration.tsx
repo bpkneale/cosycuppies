@@ -8,6 +8,8 @@ import "./cupcakeconfiguration.css"
 import { CartItem, CupcakeOrder } from "../state/cosy";
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Button from '@material-ui/core/Button';
+import { Checkbox, FormControl, FormControlLabel, FormHelperText, InputLabel, MenuItem, Select, TextField } from '@material-ui/core';
+
 
 
 type ComponentProps = {
@@ -66,43 +68,67 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
         return <div className="cupcake-conf">
             <form>
                 <p>Cupcake options</p>
-                <div className="amount">
-                    <select id="amount" value={amount} onChange={a => this.setState({amount: parseInt(a.target.value)})}>
-                        <option value={6}>6</option>
-                        <option value={12}>12</option>
-                        <option value={24}>24</option>
-                        <option value={36}>36</option>
-                    </select>
-                    <label htmlFor="amount">Cupcake quantity</label>
-                </div>
-                <p>Cupcake flavour</p>
-                <div className="flavours">
-                    <select id="flavour" value={cupcakeFlavour.id} onChange={a => {
-                            const val = CupcakeFlavours.find(f => f.id === a.target.value);
-                            this.setState({cupcakeFlavour: val ?? CupcakeFlavours[0]})}
-                        }>
-                        {CupcakeFlavours.map(f => <option key={f.id} value={f.id}>{f.flavour}</option>)}
-                    </select>
-                </div>
-                <p>Frosting flavour</p>
-                <div className="flavours">
-                    <select id="flavour" value={frostingFlavour.id} onChange={a => this.setState({frostingFlavour: FrostingFlavours.find(f => f.id === a.target.value) ?? FrostingFlavours[0]})}>
-                        {FrostingFlavours.map(f => <option key={f.id} value={f.id}>{f.flavour}</option>)}
-                    </select>
-                </div>
-                <p>Other</p>
-                <div className="box">
-                    <input id="box" type="checkbox" checked={box} onChange={() => this.setState({box: !box})} />
-                    <label htmlFor="box">Cupcake box(es)</label>
-                </div>
-                <p>Extra information (notes, customisation, etc)</p>
-                <div className="freetext">
-                    <textarea id="freetext" value={extraInformation} onChange={e => this.setState({extraInformation: e.target.value})} />
-                </div>
-                <div>
-                    <Button onClick={this.onSubmit.bind(this)} variant="contained" color="primary">Add to cart</Button>
-                    {/* <button type="submit" onClick={this.onSubmit.bind(this)}>Add to cart</button> */}
-                </div>
+                <FormControl color="secondary">
+                    <InputLabel id="cupcake-quantity-label">Cupcake quantity</InputLabel>
+                    <Select
+                        labelId="cupcake-quantity-label"
+                        value={amount}
+                        onChange={a => this.setState({amount: parseInt(a.target.value as string)})}
+                    >
+                        <MenuItem value={6}>6</MenuItem>
+                        <MenuItem value={12}>12</MenuItem>
+                        <MenuItem value={24}>24</MenuItem>
+                        <MenuItem value={36}>36</MenuItem>
+                        <MenuItem value={48}>48</MenuItem>
+                        <MenuItem value={72}>72</MenuItem>
+                    </Select>
+                </FormControl>
+                <FormControl color="secondary">
+                    <InputLabel id="cupcake-flavours-label">Cupcake flavour</InputLabel>
+                    <Select
+                        labelId="cupcake-flavours-label"
+                        value={cupcakeFlavour.id}
+                        onChange={a => this.setState({cupcakeFlavour: CupcakeFlavours.find(f => f.id === a.target.value) ?? CupcakeFlavours[0]})}
+                    >
+                        {CupcakeFlavours.map(f => <MenuItem value={f.id} key={f.id}>{f.flavour}</MenuItem>)}
+                    </Select>
+                    <FormHelperText>See ingredients list in about page</FormHelperText>
+                </FormControl>
+                <FormControl color="secondary">
+                    <InputLabel id="frosting-flavours-label">Frosting flavour</InputLabel>
+                    <Select
+                        labelId="frosting-flavours-label"
+                        value={frostingFlavour.id}
+                        onChange={a => this.setState({frostingFlavour: FrostingFlavours.find(f => f.id === a.target.value) ?? FrostingFlavours[0]})}
+                    >
+                        {FrostingFlavours.map(f => <MenuItem value={f.id} key={f.id}>{f.flavour}</MenuItem>)}
+                    </Select>
+                </FormControl>
+                <FormControlLabel
+                    control={
+                        <Checkbox
+                            checked={box}
+                            onChange={() => this.setState({box: !box})}
+                            color="secondary"
+                        />
+                    }
+                    label="Cupcake box(es)"
+                />
+                
+                <FormControl color="secondary">
+                    <TextField 
+                        label="Extra information"
+                        color="secondary" 
+                        variant="filled" 
+                        multiline 
+                        value={extraInformation} 
+                        onChange={e => this.setState({extraInformation: e.target.value})} />
+                    <FormHelperText>Toppers, notes, customisations, etc</FormHelperText>
+                </FormControl>
+                <Button onClick={this.onSubmit.bind(this)} variant="contained" color="primary">
+                    <AddShoppingCartIcon />
+                    <span>Add to cart</span>
+                </Button>
             </form>
         </div>
     }

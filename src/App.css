@@ -1,3 +1,22 @@
+@media screen and (min-width: 1024px) {
+
+  div.content {
+    padding: 1em;
+  }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+  div.content {
+    padding: 0.5em;
+  }
+
+  h2:first-child {
+    text-align: center;
+  }
+}
+
 #root {
   width: 100vw;
   height: 100vh;
@@ -11,7 +30,6 @@ div.app {
 }
 
 div.content {
-  padding: 1em;
   display: flex;
   overflow: auto;
 }

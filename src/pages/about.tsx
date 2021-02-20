@@ -31,6 +31,20 @@ class AboutPage extends React.Component<Props> {
                 <p>For updates please follow me on instagram! {ExternalLink("https://www.instagram.com/cosycuppies")}</p>
             </section>
             <section>
+                <h3>Ingredients</h3>
+                <p>The ingredients of each cupcake flavour are listed below. The cupcakes are also made in a kitchen that prepare a variety of food items and I cannot guarantee cupcakes can be free from traces of other ingredients like nuts</p>
+                <section>
+                    <h4>Vanilla Cupcakes</h4>
+                    <ul>
+                        <li>Self-raising flour</li>
+                        <li>Caster sugar</li>
+                        <li>Butter</li>
+                        <li>Free range eggs</li>
+                        <li>Vanilla paste</li>
+                    </ul>
+                </section>
+            </section>
+            <section>
                 <h3>Website</h3>
                 <p>Website designed by Ben Kneale. Copyright {DateTime.local().year}, all rights reserved</p>
                 <p>This website makes use of free icons and images from {ExternalLink("https://www.stockio.com")}</p>
