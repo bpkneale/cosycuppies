@@ -100,7 +100,7 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
                     <textarea id="freetext" value={extraInformation} onChange={e => this.setState({extraInformation: e.target.value})} />
                 </div>
                 <div>
-                    <Button variant="contained" color="primary">Add to cart</Button>
+                    <Button onClick={this.onSubmit.bind(this)} variant="contained" color="primary">Add to cart</Button>
                     {/* <button type="submit" onClick={this.onSubmit.bind(this)}>Add to cart</button> */}
                 </div>
             </form>

@@ -6,6 +6,9 @@ import { AppDispatch, useAppDispatch, useAppState } from "../store/index";
 import { useState } from "react";
 import { KeyboardDatePicker } from "@material-ui/pickers";
 import "./submitcart.css"
+import { Button, TextField } from "@material-ui/core";
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 
 type Props = {};
 
@@ -32,10 +35,13 @@ export const SubmitCart = (props: Props) => {
 
     return <div className="submit-cart">
         <p>To submit enquiry, please fill in below:</p>
-        <label>E-mail Address:</label>
-        <input type="text" value={email} onChange={e => setEmail(e.target.value)} />
-        <label>Date Required:</label>
+        <TextField color="secondary" required label="E-mail Address" onChange={e => setEmail(e.target.value)} />
+        {/* <label>E-mail Address:</label> */}
+        {/* <input type="text" value={email} onChange={e => setEmail(e.target.value)} /> */}
+        {/* <label>Date Required:</label> */}
         <KeyboardDatePicker
+            color="secondary"
+            label="Date Required"
             disableToolbar
             variant="inline"
             format="dd/MM/yyyy"
@@ -48,17 +54,28 @@ export const SubmitCart = (props: Props) => {
                 'aria-label': 'change date',
             }}
         />
-        <div>
+        <FormControlLabel
+            control={
+                <Checkbox
+                    checked={delivery}
+                    onChange={e => setDelivery(e.target.checked)}
+                    color="secondary"
+                />
+            }
+            label="Delivery"
+        />
+        {/* <div>
             <input id="delivery" type="checkbox" checked={delivery} onChange={e => setDelivery(e.target.checked)}/>
             <label htmlFor="delivery">Delivery required</label>
-        </div>
+        </div> */}
         {delivery ? 
-            <React.Fragment>
-                <label>Delivery address</label>
-                <input type="text" value={deliveryAddress} onChange={e => setDeliveryAddress(e.target.value)} />
-            </React.Fragment>
+            <TextField color="secondary" required label="Delivery address" value={deliveryAddress} onChange={e => setDeliveryAddress(e.target.value)} />
+            // <React.Fragment>
+            //     <label>Delivery address</label>
+            //     <input type="text" value={deliveryAddress} onChange={e => setDeliveryAddress(e.target.value)} />
+            // </React.Fragment>
         : null}
-        <button disabled={submitted} type="submit" onClick={onSubmit}>Submit Enquiry</button>
+        <Button disabled={submitted} onClick={onSubmit} variant="contained" color="primary">Submit Enquiry</Button>
         {submitted ? <p>Enquiry has been submitted, thank you!</p> : null}
     </div>
 }

@@ -4,10 +4,11 @@ div.submit-cart {
 }
 
 div.submit-cart > * {
-    margin: 0.5em;
+    margin: 1em;
 }
 
 div.submit-cart > label {
+    margin-left: 0;
     margin-bottom: 0.75em;
 }
 

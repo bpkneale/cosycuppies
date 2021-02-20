@@ -6,6 +6,7 @@ import { CupcakePreviews } from "../data/cupcakes";
 import { removeCartItem as removeCartItemAction } from "../actions/cosy";
 import RemoveShoppingCartIcon from '@material-ui/icons/RemoveShoppingCart';
 import "./cartitem.css"
+import { Button } from "@material-ui/core";
 
 type ComponentProps = {
     item: States.CartItem;
@@ -47,8 +48,10 @@ class CartItemUnc extends React.Component<Props> {
             {item.cupcake ? CupcakeCartItem(item.cupcake) : null}
             <div className="cart-actions">
                 <div className="cart-remove hover-primary-light-bg" onClick={() => removeCartItem(index)}>
-                    <RemoveShoppingCartIcon />
-                    <p>Remove</p>
+                    <Button variant="contained" color="primary">
+                        <RemoveShoppingCartIcon />
+                        <p>Remove</p>
+                    </Button>
                 </div>
             </div>
         </div>
