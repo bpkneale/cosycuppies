@@ -27,8 +27,20 @@ div.cart-item img {
 div.cart-item .item-details {
     display: flex;
     flex-flow: column;
+    justify-content: space-evenly;
 }
 
 div.cart-item .item-details > p {
     margin: 0.25em
+}
+
+div.cart-actions .cart-remove {
+    cursor: pointer;
+}
+
+div.cart-actions > div {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
 }

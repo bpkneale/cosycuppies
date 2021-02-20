@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import * as States from "../state/cosy";
 import { CupcakePreviews } from "../data/cupcakes";
 import { removeCartItem as removeCartItemAction } from "../actions/cosy";
+import RemoveShoppingCartIcon from '@material-ui/icons/RemoveShoppingCart';
 import "./cartitem.css"
 
 type ComponentProps = {
@@ -44,8 +45,11 @@ class CartItemUnc extends React.Component<Props> {
         const { item, removeCartItem, index } = this.props;
         return <div className="cart-item">
             {item.cupcake ? CupcakeCartItem(item.cupcake) : null}
-            <div>
-                <p onClick={() => removeCartItem(index)}>Remove</p>
+            <div className="cart-actions">
+                <div className="cart-remove hover-primary-light-bg" onClick={() => removeCartItem(index)}>
+                    <RemoveShoppingCartIcon />
+                    <p>Remove</p>
+                </div>
             </div>
         </div>
     }
