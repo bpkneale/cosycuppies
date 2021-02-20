@@ -89,10 +89,10 @@ class Banner extends React.Component<Props, State> {
     }
 }
 
-const mapStateToProps = () => {
-}
+const mapStateToProps = () => ({
+})
 
-const mapDispatchToProps = () => {
-}
+const mapDispatchToProps = () => ({
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Banner);

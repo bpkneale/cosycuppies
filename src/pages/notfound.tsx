@@ -21,10 +21,10 @@ class NotFoundUnc extends React.Component<Props> {
     }
 }
 
-const mapStateToProps = () => {
-}
+const mapStateToProps = () => ({
+})
 
-const mapDispatchToProps = () => {
-}
+const mapDispatchToProps = () => ({
+})
 
 export const NotFound = connect(mapStateToProps, mapDispatchToProps)(NotFoundUnc);
