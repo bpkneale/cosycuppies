@@ -48,7 +48,7 @@ class CupcakeUnc extends React.Component<Props> {
             <div className="cupcake-nav">
                 <UpButton />
                 <h2>{cc.title}</h2>
-                <span></span>
+                <UpButton layoutOnly />
             </div>
             <div className="cupcake-details">
                 <section className="cupcake-images">

@@ -1,4 +1,9 @@
 
+div.up-button.layout {
+    pointer-events: none;
+    z-index: -1;
+}
+
 div.up-button {
     cursor: pointer;
     display: flex;

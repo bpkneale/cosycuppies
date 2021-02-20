@@ -47,6 +47,11 @@ div.cupcake > div.cupcake-nav {
     justify-content: space-between;
 }
 
+div.cupcake > div.cupcake-nav > h2 {
+    text-align: center;
+    /* width: 100%; */
+}
+
 div.cupcake > div.cupcake-nav > * {
     margin: 0em;
 }

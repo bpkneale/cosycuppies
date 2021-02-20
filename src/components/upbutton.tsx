@@ -3,6 +3,7 @@ import "./upbutton.css"
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 type Props = {
+    layoutOnly?: boolean;
 }
 
 export const UpButton = (props: Props) => {
@@ -15,7 +16,7 @@ export const UpButton = (props: Props) => {
         history.push(splot.join("/"))
     }
 
-    return <div className="up-button" onClick={onClick}>
+    return <div className={`up-button ${props.layoutOnly ? "layout" : ""}`} onClick={onClick}>
         <ArrowBackIcon />
         <a className="up-button">Back</a>
     </div>

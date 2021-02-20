@@ -1,8 +1,18 @@
+@media screen and (min-width: 1024px) {
+    div.preview {
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    div.preview {
+    }
+}
 
 div.preview-container {
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 a.preview {
@@ -15,7 +25,6 @@ div.preview {
     flex-flow: column;
     align-items: center;
     justify-content: space-around;
-    height: 20em;
     width: 20em;
     max-width: 80vw;
     margin: 0.5em;
