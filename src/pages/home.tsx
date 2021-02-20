@@ -21,16 +21,12 @@ class HomePage extends React.Component<Props> {
             <div className="carousel-container">
                 <Carousel className="carousel" autoPlay={true} infiniteLoop={true} interval={5000}>
                     <div>
-                        <img src="/assets/carousel/1.jpg" />
+                        <img src="/assets/cupcakes/forest/1.jpg" />
                         <p>Bespoke hand-made cupcakes for any occasion</p>
                     </div>
                     <div>
                         <img src="/assets/carousel/5.jpg" />
                         <p>Customisable flavours, swirls, and more</p>
-                    </div>
-                    <div>
-                        <img src="/assets/cupcakes/bouquet/1.JPG" />
-                        <p>A theme for any occassion</p>
                     </div>
                     <div>
                         <img src="/assets/carousel/4.jpg" />

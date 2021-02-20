@@ -32,7 +32,7 @@ class AboutPage extends React.Component<Props> {
             </section>
             <section>
                 <h3>Storage</h3>
-                <p>Cupcakes are made fresh for the required delivery date. Once you have received your order you should store the cupcakes in a dark, cool area. I do not recommend storing in a fridge as this affects the texture.</p>
+                <p>Cupcakes are made fresh for the required delivery date. Once you have received your order you should store the cupcakes in a dark, cool, and dry area. I do not recommend storing in a fridge as this affects the texture.</p>
             </section>
             <section>
                 <h3>Ingredients</h3>
