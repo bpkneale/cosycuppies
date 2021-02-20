@@ -80,11 +80,9 @@
         height: 3em;
     }
 
-    div.banner span.burger-menu > span.burgoin {
-        width: 60%;
-        height: 0.1em;
-        background-color: black;
-        border-radius: 10px;
+    div.banner span.burger-menu svg {
+        height: 80%;
+        width: 80%;
     }
 
     div.banner > .cart-shortcut {

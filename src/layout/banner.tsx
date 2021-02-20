@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import { CartShortcut } from "../components/cartshortcut";
 import { isMobileDevice } from "../utils/device"
+import MenuIcon from '@material-ui/icons/Menu';
+import MenuOpenIcon from '@material-ui/icons/MenuOpen';
 
 import "./banner.css"
 
@@ -58,11 +60,7 @@ class Banner extends React.Component<Props, State> {
     burgerMenu() {
         const { drawerOpen } = this.state;
         return <span className="burger-menu" onClick={() => this.setState({drawerOpen: !drawerOpen})}>
-            <span></span>
-            <span className="burgoin"></span>
-            <span className="burgoin"></span>
-            <span className="burgoin"></span>
-            <span></span>
+            {drawerOpen ? <MenuOpenIcon /> : <MenuIcon />}
         </span>
     }
 
