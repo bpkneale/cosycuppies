@@ -6,37 +6,53 @@ import { AppDispatch, useAppDispatch, useAppState } from "../store/index";
 import { useState } from "react";
 import { KeyboardDatePicker } from "@material-ui/pickers";
 import "./submitcart.css"
-import { Button, TextField } from "@material-ui/core";
+import { Button, FormControl, FormHelperText, TextField } from "@material-ui/core";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import PublishIcon from '@material-ui/icons/Publish';
+import validator from "email-validator"
 
 type Props = {};
 
 export const SubmitCart = (props: Props) => {
     const cartContents = useAppState().cart;
     const [email, setEmail] = useState("");
+    const [emailValid, setEmailValid] = useState(true);
     const [delivery, setDelivery] = useState(false);
     const [deliveryAddress, setDeliveryAddress] = useState("");
     const [submitted, setSubmitted] = useState(false);
     const [selectedDate, handleDateChange] = useState(DateTime.local())
     const dispatch = useAppDispatch();
 
-    const onSubmit = () => {
-        const cart: CartSubmit = {
-            email,
-            requiredBy: DateTime.local(),
-            delivery,
-            deliveryAddress,
-            cart: cartContents
+    const handleEmailInput = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+        setEmail(e.target.value);
+        if(!emailValid) {
+            setEmailValid(validator.validate(e.target.value))
         }
-        setSubmitted(true);
-        dispatch(submitCart(cart) as any)
+    }
+
+    const onSubmit = () => {
+        if(validator.validate(email)) {
+            const cart: CartSubmit = {
+                email,
+                requiredBy: DateTime.local(),
+                delivery,
+                deliveryAddress,
+                cart: cartContents
+            }
+            setSubmitted(true);
+            dispatch(submitCart(cart) as any)
+        } else {
+            setEmailValid(false);
+        }
     }
 
     return <div className="submit-cart">
         <p>To submit enquiry, please fill in below:</p>
-        <TextField color="secondary" required label="E-mail Address" onChange={e => setEmail(e.target.value)} />
+        <FormControl color="secondary">
+            <TextField color="secondary" required label="E-mail Address" onChange={handleEmailInput} />
+            {emailValid ? null : <FormHelperText error>Please enter a valid email address</FormHelperText>}
+        </FormControl>
         <KeyboardDatePicker
             color="secondary"
             label="Date Required"
