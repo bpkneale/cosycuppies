@@ -7,10 +7,19 @@ div.cupcake-conf > form {
     display: flex;
     flex-flow: column;
     flex-grow: 1;
+    align-content: center;
 }
 
 div.cupcake-conf > form > * {
     margin: 0.5em;
+}
+
+div.cupcake-conf > form > *:not(.large) {
+    max-width: 20em;
+}
+
+div.cupcake-conf > form > .large {
+    max-width: 40em;
 }
 
 div.cupcake-conf div.flavours {

@@ -29,6 +29,10 @@ class HomePage extends React.Component<Props> {
                         <p>Customisable flavours, swirls, and more</p>
                     </div>
                     <div>
+                        <img src="/assets/cupcakes/valentines/4.jpg" />
+                        <p>Made with care in The Vines, Perth</p>
+                    </div>
+                    <div>
                         <img src="/assets/carousel/4.jpg" />
                         <p>Perfect for birthdays, celebrations, and more</p>
                     </div>

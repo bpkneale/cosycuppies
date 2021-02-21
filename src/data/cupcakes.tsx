@@ -8,7 +8,8 @@ enum CupcakeLinks {
     Lavender = "lavender",
     Bouquet = "bouquet",
     Halloween = "halloween",
-    Christmas = "christmas"
+    Christmas = "christmas",
+    Valentines = "valentines"
 }
 
 export type CupcakePreview = PreviewProps & {
@@ -40,16 +41,16 @@ export const CupcakePreviews: CupcakePreview[] = [
         ]
     },
     {
-        title: "Bouquet",
-        imageSrc: "/assets/cupcakes/bouquet/1.jpg",
-        link: CupcakeLinks.Bouquet,
-        description: "Arrangement of flower themed cupcakes in a bouquet, perfect for valentines day",
+        title: "Valentines",
+        imageSrc: "/assets/cupcakes/valentines/4.jpg",
+        link: CupcakeLinks.Valentines,
+        description: "Delicate and bespoke cupcakes, the perfect gift for your special someone",
         carousel: [
-            "/assets/cupcakes/bouquet/1.jpg",
-            "/assets/cupcakes/bouquet/2.jpg",
-            "/assets/cupcakes/bouquet/3.jpg",
-            "/assets/cupcakes/bouquet/4.jpg",
-            "/assets/cupcakes/bouquet/5.jpg"
+            "/assets/cupcakes/valentines/1.jpg",
+            "/assets/cupcakes/valentines/2.jpg",
+            "/assets/cupcakes/valentines/3.jpg",
+            "/assets/cupcakes/valentines/4.jpg",
+            "/assets/cupcakes/valentines/5.jpg"
         ]
     },
     {
@@ -100,7 +101,20 @@ export const CupcakePreviews: CupcakePreview[] = [
             "/assets/cupcakes/xmas/4.jpg",
             "/assets/cupcakes/xmas/5.jpg"
         ]
-    }
+    },
+    {
+        title: "Bouquet",
+        imageSrc: "/assets/cupcakes/bouquet/1.jpg",
+        link: CupcakeLinks.Bouquet,
+        description: "Arrangement of flower themed cupcakes in a bouquet, perfect for valentines day",
+        carousel: [
+            "/assets/cupcakes/bouquet/1.jpg",
+            "/assets/cupcakes/bouquet/2.jpg",
+            "/assets/cupcakes/bouquet/3.jpg",
+            "/assets/cupcakes/bouquet/4.jpg",
+            "/assets/cupcakes/bouquet/5.jpg"
+        ]
+    },
 ]
 
 export const Lookup = (link: string): CupcakePreview | undefined => {

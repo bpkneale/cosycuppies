@@ -75,6 +75,7 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
                         value={amount}
                         onChange={a => this.setState({amount: parseInt(a.target.value as string)})}
                     >
+                        <MenuItem value={4}>4</MenuItem>
                         <MenuItem value={6}>6</MenuItem>
                         <MenuItem value={12}>12</MenuItem>
                         <MenuItem value={24}>24</MenuItem>
@@ -115,7 +116,7 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
                     label="Cupcake box(es)"
                 />
                 
-                <FormControl color="secondary">
+                <FormControl className="large" color="secondary">
                     <TextField 
                         label="Extra information"
                         color="secondary" 
