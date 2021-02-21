@@ -6,6 +6,7 @@ const DefaultApiBase = "https://api.cosycuppies.com.au";
 
 export type CartSubmit = {
     email: string;
+    name: string;
     requiredBy: luxon.DateTime;
     delivery: boolean;
     deliveryAddress: string;
@@ -31,6 +32,7 @@ export class ApiClient {
     async submitCart(cart: CartSubmit): Promise<Reply> {
         const send = {
             enquiry: {
+                ...cart,
                 email: cart.email,
                 requiredBy: cart.requiredBy.toISO(),
                 cart: cart.cart
