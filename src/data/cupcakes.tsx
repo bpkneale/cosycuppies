@@ -24,13 +24,13 @@ export const Quantities = [
 ]
 
 export const QuantityDiscount: Record<number, Decimal | undefined> = {
-    4: new Decimal(95),
-    6: new Decimal(94),
-    12: new Decimal(90),
-    24: new Decimal(85),
-    32: new Decimal(80),
-    48: new Decimal(75),
-    72: new Decimal(70)
+    4: new Decimal(110),
+    6: new Decimal(105),
+    12: new Decimal(100),
+    24: new Decimal(95),
+    32: new Decimal(90),
+    48: new Decimal(85),
+    72: new Decimal(80)
 }
 
 export const BoxCost: Record<number, Decimal | undefined> = {
@@ -44,21 +44,23 @@ export const BoxCost: Record<number, Decimal | undefined> = {
 }
 
 export const CakeTopperPriceFrom = new Decimal(1);
-export const MetallicBase = new Decimal(0.125)
+export const MetallicBase = new Decimal(0.125);
 
 export type CupcakePreview = PreviewProps & {
     description: string;
     hasTopper?: boolean;
 }
 
-const DefaultBasePrice = new Decimal(2.7)
+const DefaultBasePrice = new Decimal(2.7);
+const ComplexSwirlPrice = new Decimal(3.94);
+export const ChocolateCostEa = new Decimal(0.3);
 
 export const CupcakePreviews: CupcakePreview[] = [
     {
         title: "Enchanted Forest",
         imageSrc: "/assets/cupcakes/forest/1.jpg",
         link: CupcakeLinks.EnchantedForest,
-        basePrice: DefaultBasePrice,
+        basePrice: ComplexSwirlPrice,
         description: "A whimsical mix of colours and butterflies",
         carousel: [
             "/assets/cupcakes/forest/1.jpg",
@@ -70,7 +72,7 @@ export const CupcakePreviews: CupcakePreview[] = [
         title: "Mouse",
         imageSrc: "/assets/cupcakes/mouse/2.jpg",
         link: CupcakeLinks.Mouse,
-        basePrice: DefaultBasePrice.plus(0.25),
+        basePrice: ComplexSwirlPrice,
         description: "Beautiful mouse themed cupcakes with fondant ears",
         carousel: [
             "/assets/cupcakes/mouse/1.jpg",
@@ -84,7 +86,7 @@ export const CupcakePreviews: CupcakePreview[] = [
         imageSrc: "/assets/cupcakes/valentines/4.jpg",
         link: CupcakeLinks.Valentines,
         hasTopper: true,
-        basePrice: DefaultBasePrice.plus(1.4),
+        basePrice: ComplexSwirlPrice.plus(1.4),
         description: "Delicate and bespoke cupcakes, the perfect gift for your special someone",
         carousel: [
             "/assets/cupcakes/valentines/1.jpg",
@@ -137,7 +139,7 @@ export const CupcakePreviews: CupcakePreview[] = [
         title: "Christmas",
         imageSrc: "/assets/cupcakes/xmas/1.jpg",
         link: CupcakeLinks.Christmas,
-        basePrice: DefaultBasePrice,
+        basePrice: ComplexSwirlPrice,
         description: "Festive red and green with beautiful sprinkles",
         carousel: [
             "/assets/cupcakes/xmas/1.jpg",
