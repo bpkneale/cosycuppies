@@ -18,6 +18,8 @@ export type CupcakeOrder = BaseOrder & {
     cupcakeFlavour: CupcakeFlavour;
     frostingFlavour: FrostingFlavour;
     box: boolean;
+    metallicBase: boolean;
+    topper: boolean;
 }
 
 export type CakeOrder = BaseOrder & {

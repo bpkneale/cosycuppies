@@ -32,6 +32,10 @@ div.cupcake-conf div.amount > label {
     margin-left: 1em;
 }
 
+div.cupcake-conf span {
+    font-size: 0.9rem;
+}
+
 div.cupcake-conf textarea {
     width: 100%;
     min-height: 4em;

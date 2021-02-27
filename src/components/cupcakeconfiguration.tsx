@@ -32,6 +32,8 @@ type State = {
     frostingFlavour: FrostingFlavour;
     box: boolean;
     extraInformation: string;
+    metallicBase: boolean;
+    topper: boolean;
 }
 
 class CupcakeConfigurationUnc extends React.Component<Props, State> {
@@ -46,7 +48,9 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
             cupcakeFlavour: CupcakeFlavours[0],
             frostingFlavour: FrostingFlavours[0],
             box: false,
-            extraInformation: ""
+            extraInformation: "",
+            metallicBase: false,
+            topper: false
         }
     }
 
@@ -71,7 +75,7 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
     }
 
     render() {
-        const { amount, frostingFlavour, cupcakeFlavour, box, extraInformation } = this.state;
+        const { amount, frostingFlavour, cupcakeFlavour, box, extraInformation, metallicBase, topper } = this.state;
         const item = this.asCartItem();
         let cost = null;
         try {
@@ -122,6 +126,26 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
                     }
                     label="Cupcake box(es)"
                 />
+                <FormControlLabel
+                    control={
+                        <Checkbox
+                            checked={metallicBase}
+                            onChange={() => this.setState({metallicBase: !metallicBase})}
+                            color="secondary"
+                        />
+                    }
+                    label="Metallic cupcake cups"
+                />
+                <FormControlLabel
+                    control={
+                        <Checkbox
+                            checked={topper}
+                            onChange={() => this.setState({topper: !topper})}
+                            color="secondary"
+                        />
+                    }
+                    label="Cupcake toppers (every second cupcake)"
+                />
                 
                 <FormControl className="large" color="secondary">
                     <TextField 
@@ -133,7 +157,7 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
                         onChange={e => this.setState({extraInformation: e.target.value})} />
                     <FormHelperText>Toppers, notes, customisations, etc</FormHelperText>
                 </FormControl>
-                <p>{cost ? `Estimated cost: $${cost.toDecimalPlaces(1)}0` : `Unable to estimate cost`}</p>
+                <p>{cost ? `Estimated cost: $${cost.toDecimalPlaces(1)}` : `Unable to estimate cost`}</p>
                 <Button onClick={this.onSubmit.bind(this)} variant="contained" color="primary">
                     <AddShoppingCartIcon />
                     <span>Add to cart</span>

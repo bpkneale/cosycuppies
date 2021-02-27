@@ -59,4 +59,5 @@ div.cupcake > div.cupcake-nav > * {
 section.cupcake-detail {
     display: flex;
     flex-flow: column;
+    flex-grow: 1;
 }

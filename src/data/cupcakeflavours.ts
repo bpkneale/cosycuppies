@@ -13,8 +13,8 @@ export const CupcakeFlavours: CupcakeFlavour[] = [
         flavour: "Chocolate",
         id: "chocolate"
     },
-    {
-        flavour: "Red velvet",
-        id: "red-velvet"
-    }
+    // {
+    //     flavour: "Red velvet",
+    //     id: "red-velvet"
+    // }
 ]

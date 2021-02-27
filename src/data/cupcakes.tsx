@@ -36,23 +36,28 @@ export const QuantityDiscount: Record<number, Decimal | undefined> = {
 export const BoxCost: Record<number, Decimal | undefined> = {
     4: new Decimal(2),
     6: new Decimal(2),
-    12: new Decimal(2.5),
+    12: new Decimal(3.1),
     24: new Decimal(4.5),
-    32: new Decimal(7),
+    32: new Decimal(7.6),
     48: new Decimal(9),
     72: new Decimal(13.5)
 }
 
+export const CakeTopperPriceFrom = new Decimal(1);
+export const MetallicBase = new Decimal(0.125)
+
 export type CupcakePreview = PreviewProps & {
     description: string;
 }
+
+const DefaultBasePrice = new Decimal(3.3)
 
 export const CupcakePreviews: CupcakePreview[] = [
     {
         title: "Enchanted Forest",
         imageSrc: "/assets/cupcakes/forest/1.jpg",
         link: CupcakeLinks.EnchantedForest,
-        basePrice: new Decimal(4.5),
+        basePrice: DefaultBasePrice,
         description: "A whimsical mix of colours and butterflies",
         carousel: [
             "/assets/cupcakes/forest/1.jpg",
@@ -64,7 +69,7 @@ export const CupcakePreviews: CupcakePreview[] = [
         title: "Mouse",
         imageSrc: "/assets/cupcakes/mouse/2.jpg",
         link: CupcakeLinks.Mouse,
-        basePrice: new Decimal(4.5),
+        basePrice: DefaultBasePrice,
         description: "Beautiful mouse themed cupcakes with fondant ears",
         carousel: [
             "/assets/cupcakes/mouse/1.jpg",
@@ -77,7 +82,7 @@ export const CupcakePreviews: CupcakePreview[] = [
         title: "Valentines",
         imageSrc: "/assets/cupcakes/valentines/4.jpg",
         link: CupcakeLinks.Valentines,
-        basePrice: new Decimal(4.5),
+        basePrice: DefaultBasePrice.plus(1.4),
         description: "Delicate and bespoke cupcakes, the perfect gift for your special someone",
         carousel: [
             "/assets/cupcakes/valentines/1.jpg",
@@ -91,7 +96,7 @@ export const CupcakePreviews: CupcakePreview[] = [
         title: "Halloween",
         imageSrc: "/assets/cupcakes/halloween/1.jpg",
         link: CupcakeLinks.Halloween,
-        basePrice: new Decimal(4.5),
+        basePrice: DefaultBasePrice,
         description: "Spooky and scary cupcakes for a halloween celebration",
         carousel: [
             "/assets/cupcakes/halloween/1.jpg",
@@ -104,7 +109,7 @@ export const CupcakePreviews: CupcakePreview[] = [
         title: "Nude",
         imageSrc: "/assets/cupcakes/box-nude.jpg",
         link: CupcakeLinks.Nude,
-        basePrice: new Decimal(4.5),
+        basePrice: DefaultBasePrice,
         description: "A naturally beautiful and classic colour",
         carousel: [
             "/assets/cupcakes/nude/1.jpg",
@@ -117,7 +122,7 @@ export const CupcakePreviews: CupcakePreview[] = [
         title: "Lavender",
         imageSrc: "/assets/cupcakes/lavender/1.jpg",
         link: CupcakeLinks.Lavender,
-        basePrice: new Decimal(4.5),
+        basePrice: DefaultBasePrice,
         description: "Deep lavender colour with rose swirl",
         carousel: [
             "/assets/cupcakes/lavender/1.jpg",
@@ -130,7 +135,7 @@ export const CupcakePreviews: CupcakePreview[] = [
         title: "Christmas",
         imageSrc: "/assets/cupcakes/xmas/1.jpg",
         link: CupcakeLinks.Christmas,
-        basePrice: new Decimal(4.5),
+        basePrice: DefaultBasePrice,
         description: "Festive red and green with beautiful sprinkles",
         carousel: [
             "/assets/cupcakes/xmas/1.jpg",
@@ -144,7 +149,7 @@ export const CupcakePreviews: CupcakePreview[] = [
         title: "Bouquet",
         imageSrc: "/assets/cupcakes/bouquet/1.jpg",
         link: CupcakeLinks.Bouquet,
-        basePrice: new Decimal(4.5),
+        basePrice: DefaultBasePrice,
         description: "Arrangement of flower themed cupcakes in a bouquet, perfect for valentines day",
         carousel: [
             "/assets/cupcakes/bouquet/1.jpg",
