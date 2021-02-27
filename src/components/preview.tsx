@@ -1,3 +1,4 @@
+import Decimal from "decimal.js";
 import React from "react"
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
@@ -7,6 +8,7 @@ export type PreviewProps = {
     imageSrc: string;
     title: string;
     link: string;
+    basePrice: Decimal;
     carousel?: string[];
 }
 
