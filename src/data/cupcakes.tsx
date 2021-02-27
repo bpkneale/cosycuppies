@@ -48,9 +48,10 @@ export const MetallicBase = new Decimal(0.125)
 
 export type CupcakePreview = PreviewProps & {
     description: string;
+    hasTopper?: boolean;
 }
 
-const DefaultBasePrice = new Decimal(3.3)
+const DefaultBasePrice = new Decimal(2.7)
 
 export const CupcakePreviews: CupcakePreview[] = [
     {
@@ -69,7 +70,7 @@ export const CupcakePreviews: CupcakePreview[] = [
         title: "Mouse",
         imageSrc: "/assets/cupcakes/mouse/2.jpg",
         link: CupcakeLinks.Mouse,
-        basePrice: DefaultBasePrice,
+        basePrice: DefaultBasePrice.plus(0.25),
         description: "Beautiful mouse themed cupcakes with fondant ears",
         carousel: [
             "/assets/cupcakes/mouse/1.jpg",
@@ -82,6 +83,7 @@ export const CupcakePreviews: CupcakePreview[] = [
         title: "Valentines",
         imageSrc: "/assets/cupcakes/valentines/4.jpg",
         link: CupcakeLinks.Valentines,
+        hasTopper: true,
         basePrice: DefaultBasePrice.plus(1.4),
         description: "Delicate and bespoke cupcakes, the perfect gift for your special someone",
         carousel: [

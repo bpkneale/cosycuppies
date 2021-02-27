@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { FrostingFlavour, FrostingFlavours } from "../data/frostingflavours"
 import { CupcakeFlavour, CupcakeFlavours } from "../data/cupcakeflavours"
 import { addToCart as addToCartAction } from "../actions/cosy"
-import { Quantities } from "../data/cupcakes"
+import { Quantities, Lookup } from "../data/cupcakes"
 import "./cupcakeconfiguration.css"
 import { CartItem, CupcakeOrder } from "../state/cosy";
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
@@ -75,8 +75,10 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
     }
 
     render() {
+        const { id } = this.props;
         const { amount, frostingFlavour, cupcakeFlavour, box, extraInformation, metallicBase, topper } = this.state;
         const item = this.asCartItem();
+        const cc = Lookup(id);
         let cost = null;
         try {
             cost = EstimateCost(item);
@@ -136,6 +138,7 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
                     }
                     label="Metallic cupcake cups"
                 />
+                {cc?.hasTopper ? null : 
                 <FormControlLabel
                     control={
                         <Checkbox
@@ -145,7 +148,7 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
                         />
                     }
                     label="Cupcake toppers (every second cupcake)"
-                />
+                />}
                 
                 <FormControl className="large" color="secondary">
                     <TextField 
