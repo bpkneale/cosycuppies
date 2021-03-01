@@ -5,7 +5,7 @@ import Decimal from "decimal.js";
 export const EstimateCost = (item: CartItem): Decimal => {
     if(item.cupcake !== undefined) {
         const cupcake = Lookup(item.cupcake.id);
-        if(!cupcake) {
+        if(!cupcake || cupcake.basePrice === null) {
             throw new Error("Unable to lookup cupcake")
         }
         let cost = new Decimal(cupcake.basePrice);

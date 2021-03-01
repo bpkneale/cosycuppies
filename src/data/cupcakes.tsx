@@ -2,6 +2,7 @@ import Decimal from "decimal.js";
 import { PreviewProps } from "../components/preview";
 
 enum CupcakeLinks {
+    Custom = "custom",
     EnchantedForest = "enchanted-forest",
     BabyBlue = "baby-blue",
     Mouse = "mouse",
@@ -57,6 +58,13 @@ export const ChocolateCostEa = new Decimal(0.3);
 
 export const CupcakePreviews: CupcakePreview[] = [
     {
+        title: "Custom",
+        imageSrc: "/assets/etc/custom.png",
+        link: CupcakeLinks.Custom,
+        basePrice: null,
+        description: "Have something in mind or seen a design you like? Let me know"
+    },
+    {
         title: "Enchanted Forest",
         imageSrc: "/assets/cupcakes/forest/1.jpg",
         link: CupcakeLinks.EnchantedForest,
@@ -87,7 +95,7 @@ export const CupcakePreviews: CupcakePreview[] = [
         link: CupcakeLinks.Valentines,
         hasTopper: true,
         basePrice: ComplexSwirlPrice.plus(1.4),
-        description: "Delicate and bespoke cupcakes, the perfect gift for your special someone",
+        description: "Delicate and bespoke cupcakes, the perfect gift for your special someone. Includes cake toppers as pictured",
         carousel: [
             "/assets/cupcakes/valentines/1.jpg",
             "/assets/cupcakes/valentines/2.jpg",

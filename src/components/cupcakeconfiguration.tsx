@@ -81,7 +81,9 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
         const cc = Lookup(id);
         let cost = null;
         try {
-            cost = EstimateCost(item);
+            if(cc?.basePrice !== null) {
+                cost = EstimateCost(item);
+            }
         } catch(err) {
             console.error(err);
         }

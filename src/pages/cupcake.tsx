@@ -35,7 +35,9 @@ class CupcakeUnc extends React.Component<Props> {
                 </div>
             )
         } else {
-            return <img src={cc.imageSrc} alt={`A cupcake of style ${cc.title}`}></img>
+            return <div className="img-container">
+                <img src={cc.imageSrc} alt={`A cupcake of style ${cc.title}`}></img>
+            </div>
         }
     }
 

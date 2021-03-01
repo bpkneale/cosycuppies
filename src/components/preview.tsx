@@ -8,7 +8,7 @@ export type PreviewProps = {
     imageSrc: string;
     title: string;
     link: string;
-    basePrice: Decimal;
+    basePrice: Decimal | null;
     carousel?: string[];
 }
 
