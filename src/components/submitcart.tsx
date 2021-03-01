@@ -11,8 +11,11 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import PublishIcon from '@material-ui/icons/Publish';
 import validator from "email-validator"
+import Decimal from "decimal.js";
 
-type Props = {};
+type Props = {
+    totalCost: Decimal | null;
+};
 
 export const SubmitCart = (props: Props) => {
     const cartContents = useAppState().cart;
@@ -57,6 +60,7 @@ export const SubmitCart = (props: Props) => {
                 requiredBy: DateTime.local(),
                 delivery,
                 deliveryAddress,
+                estimatedCost: `$${props.totalCost?.toDecimalPlaces(1)}`,
                 cart: cartContents
             }
             setSubmitted(true);

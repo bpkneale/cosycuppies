@@ -10,6 +10,7 @@ export type CartSubmit = {
     requiredBy: luxon.DateTime;
     delivery: boolean;
     deliveryAddress: string;
+    estimatedCost: string;
     cart: CartContents;
 }
 
