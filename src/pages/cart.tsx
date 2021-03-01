@@ -5,6 +5,8 @@ import { CartContents, CosyState } from "../state/cosy";
 import { CartItem } from "../components/cartitem";
 import "./cart.css"
 import { SubmitCart } from "../components/submitcart";
+import Decimal from "decimal.js";
+import { EstimateCost } from "../utils/cost";
 
 type ComponentProps = {
 }
@@ -19,8 +21,24 @@ type DispatchProps = {
 type Props = ComponentProps & StateProps & DispatchProps;
 
 class CartUnc extends React.Component<Props> {
+    estimatedTotal(): Decimal | null {
+        const { cart } = this.props;
+        let cost = new Decimal(0);
+        for(const item of cart) {
+            try {
+                const itemCost = EstimateCost(item);
+                cost = cost.plus(itemCost);
+            } catch(err) {
+                console.error(err);
+                return null;
+            }
+        }
+        return cost;
+    }
+
     render() {
         const { cart } = this.props;
+        const total = this.estimatedTotal();
         return <div className="shopping-cart">
             <h2>Shopping Cart</h2>
             <div className="cart-container">
@@ -29,7 +47,7 @@ class CartUnc extends React.Component<Props> {
                 <React.Fragment>
                     <SubmitCart />
                     <div>
-                        <p>Cart items:</p>
+                        <p>{total ? `Estimated total cost: $${total.toDecimalPlaces(1)}. ` : ``}Cart items:</p>
                         {cart.map((item, index) => <CartItem item={item} index={index} />)}
                     </div>
                 </React.Fragment>

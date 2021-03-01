@@ -82,6 +82,7 @@ export const SubmitCart = (props: Props) => {
             format="dd/MM/yyyy"
             margin="normal"
             id="date-picker-inline"
+            disablePast
             autoOk
             value={selectedDate}
             onChange={e => handleDateChange(e ?? DateTime.local())}
@@ -97,7 +98,7 @@ export const SubmitCart = (props: Props) => {
                     color="secondary"
                 />
             }
-            label="Delivery"
+            label="Delivery (may occur additional charge)"
         />
         {delivery ? 
             <FormControl color="secondary">
