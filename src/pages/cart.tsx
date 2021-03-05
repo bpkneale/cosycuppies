@@ -47,7 +47,7 @@ class CartUnc extends React.Component<Props> {
                 <React.Fragment>
                     <SubmitCart totalCost={total} />
                     <div>
-                        <p>{total ? `Estimated total cost: $${total.toDecimalPlaces(1)}. ` : ``}Cart items:</p>
+                        {/* <p>{total ? `Estimated total cost: $${total.toDecimalPlaces(1)}. ` : ``}Cart items:</p> */}
                         {cart.map((item, index) => <CartItem item={item} index={index} />)}
                     </div>
                 </React.Fragment>

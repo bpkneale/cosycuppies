@@ -162,7 +162,7 @@ class CupcakeConfigurationUnc extends React.Component<Props, State> {
                         onChange={e => this.setState({extraInformation: e.target.value})} />
                     <FormHelperText>Toppers, notes, customisations, etc</FormHelperText>
                 </FormControl>
-                <p>{cost ? `Estimated cost: $${cost.toDecimalPlaces(1)}` : `Unable to estimate cost`}</p>
+                {/* <p>{cost ? `Estimated cost: $${cost.toDecimalPlaces(1)}` : `Unable to estimate cost`}</p> */}
                 <Button onClick={this.onSubmit.bind(this)} variant="contained" color="primary">
                     <AddShoppingCartIcon />
                     <span>Add to cart</span>
