@@ -5,6 +5,7 @@ enum CupcakeLinks {
     Custom = "custom",
     EnchantedForest = "enchanted-forest",
     BabyBlue = "baby-blue",
+    BabyShower = "baby-shower",
     Mouse = "mouse",
     Nude = "nude",
     Lavender = "lavender",
@@ -74,6 +75,20 @@ export const CupcakePreviews: CupcakePreview[] = [
             "/assets/cupcakes/forest/1.jpg",
             "/assets/cupcakes/forest/2.jpg",
             "/assets/cupcakes/forest/3.jpg"
+        ]
+    },
+    {
+        title: "Baby Shower",
+        imageSrc: "/assets/cupcakes/baby-shower/1.jpg",
+        link: CupcakeLinks.BabyShower,
+        basePrice: ComplexSwirlPrice.plus(1.4),
+        description: "Gorgeous colours and swirls to celebrate a baby shower. Includes `Oh Baby` toppers.",
+        carousel: [
+            "/assets/cupcakes/baby-shower/1.jpg",
+            "/assets/cupcakes/baby-shower/2.jpg",
+            "/assets/cupcakes/baby-shower/3.jpg",
+            "/assets/cupcakes/baby-shower/4.jpg",
+            "/assets/cupcakes/baby-shower/5.jpg"
         ]
     },
     {

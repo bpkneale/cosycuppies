@@ -2,6 +2,16 @@
     div.text-page {
         margin-left: 2em;
     }
+
+    div.coming-soon img {
+        max-width: 50vw;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    div.coming-soon img {
+        max-width: 100%;
+    }
 }
 
 div.text-page {
@@ -15,7 +25,6 @@ div.coming-soon {
 
 div.coming-soon img {
     margin-top: 1em;
-    max-width: 100%;
     border-radius: 5px;
 }
 
