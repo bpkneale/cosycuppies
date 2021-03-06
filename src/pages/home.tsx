@@ -2,6 +2,7 @@ import React from "react"
 import { connect } from "react-redux";
 import { Carousel } from "react-responsive-carousel"
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { BasePage } from "./base";
 import "./home.css"
 
 type ComponentProps = {
@@ -15,9 +16,9 @@ type DispatchProps = {
 
 type Props = ComponentProps & StateProps & DispatchProps;
 
-class HomePage extends React.Component<Props> {
+class HomePage extends BasePage<Props> {
     render() {
-        return <div className="home">
+        return <div className="home base-page" ref={ref => this.container = ref}>
             <div className="carousel-container">
                 <Carousel className="carousel" autoPlay={true} infiniteLoop={true} interval={5000}>
                     <div>

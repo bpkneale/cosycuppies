@@ -7,6 +7,7 @@ import "./cart.css"
 import { SubmitCart } from "../components/submitcart";
 import Decimal from "decimal.js";
 import { EstimateCost } from "../utils/cost";
+import { BasePage } from "./base";
 
 type ComponentProps = {
 }
@@ -20,7 +21,7 @@ type DispatchProps = {
 
 type Props = ComponentProps & StateProps & DispatchProps;
 
-class CartUnc extends React.Component<Props> {
+class CartUnc extends BasePage<Props> {
     estimatedTotal(): Decimal | null {
         const { cart } = this.props;
         let cost = new Decimal(0);
@@ -39,7 +40,7 @@ class CartUnc extends React.Component<Props> {
     render() {
         const { cart } = this.props;
         const total = this.estimatedTotal();
-        return <div className="shopping-cart">
+        return <div className="shopping-cart base-page" ref={ref => this.container = ref}>
             <h2>Shopping Cart</h2>
             <div className="cart-container">
                 {cart.length === 0 ? 

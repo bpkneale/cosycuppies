@@ -1,5 +1,6 @@
 import React from "react"
 import { connect } from "react-redux";
+import { BasePage } from "./base";
 import "./contact.css"
 
 type ComponentProps = {
@@ -15,9 +16,9 @@ type Props = ComponentProps & StateProps & DispatchProps;
 
 const MailTo = (email: string) => <a href={`mailto:${email}`}>{email}</a>
 
-class Contact extends React.Component<Props> {
+class Contact extends BasePage<Props> {
     render() {
-        return <div className="contact text-page">
+        return <div className="contact text-page base-page" ref={ref => this.container = ref}>
             <section>
                 <h2>Contact</h2>
                 <h3>Stephanie</h3>

@@ -6,6 +6,7 @@ import { CupcakeConfiguration } from "../components/cupcakeconfiguration";
 import { UpButton } from "../components/upbutton";
 import { CupcakePreview, Lookup } from "../data/cupcakes";
 import { getTopLocation } from "../utils/location"
+import { BasePage } from "./base";
 import "./cupcake.css"
 
 type ComponentProps = {
@@ -19,9 +20,7 @@ type DispatchProps = {
 
 type Props = ComponentProps & StateProps & DispatchProps;
 
-class CupcakeUnc extends React.Component<Props> {
-    componentDidMount() {
-    }
+class CupcakeUnc extends BasePage<Props> {
 
     renderCupcakeImages(cc: CupcakePreview) {
         if(cc.carousel) {
@@ -46,7 +45,7 @@ class CupcakeUnc extends React.Component<Props> {
         if(!cc) {
             return <Redirect to="/not-found" />
         }
-        return <div className="cupcake">
+        return <div className="cupcake base-page" ref={ref => this.container = ref}>
             <div className="cupcake-nav">
                 <UpButton />
                 <h2>{cc.title}</h2>

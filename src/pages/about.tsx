@@ -1,6 +1,7 @@
 import { DateTime } from "luxon";
 import React from "react"
 import { connect } from "react-redux";
+import { BasePage } from "./base";
 import "./common.css"
 
 type ComponentProps = {
@@ -16,9 +17,9 @@ type Props = ComponentProps & StateProps & DispatchProps;
 
 const ExternalLink = (href: string) => <a href={href}>{href}</a>
 
-class AboutPage extends React.Component<Props> {
+class AboutPage extends BasePage<Props> {
     render() {
-        return <div className="text-page">
+        return <div className="text-page base-page" ref={ref => this.container = ref}>
             <h2>About</h2>
             <section>
                 <h3>Stephanie's Cosy Cuppies</h3>
