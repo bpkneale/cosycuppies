@@ -33,5 +33,5 @@ export const addAnalytic = (event: AnalyticEvent) => ({
 })
 
 export const clearAnalytics = () => ({
-    type: ADD_ANALYTIC
+    type: CLEAR_ANALYTICS
 })

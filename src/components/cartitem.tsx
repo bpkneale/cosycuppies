@@ -47,7 +47,7 @@ const CupcakeCartItem = (item: States.CupcakeOrder, cartItem: States.CartItem) =
             <p>Cupcake: {item.cupcakeFlavour.flavour}</p>
             <p>Frosting: {item.frostingFlavour.flavour}</p>
             <p>{item.box ? "With box" : "No box"}</p>
-            <p>{costText}</p>
+            {/* <p>{costText}</p> */}
         </div>
     </React.Fragment>
 }
