@@ -21,12 +21,14 @@ import { Cart } from './pages/cart';
 import { Toast } from './layout/toast';
 import { MuiPickersUtilsProvider } from "@material-ui/pickers"
 import LuxonUtils from '@date-io/luxon';
+import { Analytics } from './components/analytics';
 
 export default function App() {
   return (
     <Router>
       <MuiPickersUtilsProvider utils={LuxonUtils}>
         <div className="app bg" id="app">
+          <Analytics />
           <Banner />
           <Toast />
           <div className="content">

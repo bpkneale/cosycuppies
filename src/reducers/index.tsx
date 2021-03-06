@@ -5,12 +5,14 @@ import { useSelector } from "react-redux";
 
 export const defaultState: CosyState = {
     cart: [],
-    toast: undefined
+    toast: undefined,
+    analytics: []
 }
 
 export const rootReducer = (state: CosyState = defaultState, action: Actions.CosyAction) => {
     let cart: CartContents = state.cart;
     let toast: string | undefined = undefined;
+    let analytics = state.analytics;
     switch(action.type) {
         case Actions.ADD_TO_CART:
             cart = [...state.cart];
@@ -39,6 +41,22 @@ export const rootReducer = (state: CosyState = defaultState, action: Actions.Cos
             return {
                 ...state,
                 toast: undefined
+            }
+
+        case Actions.ADD_ANALYTIC:
+            if(action.event) {
+                analytics = [...analytics];
+                analytics.push(action.event);
+            }
+            return {
+                ...state,
+                analytics
+            }
+
+        case Actions.CLEAR_ANALYTICS:
+            return {
+                ...state,
+                analytics: []
             }
     }
 

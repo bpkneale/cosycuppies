@@ -1,8 +1,11 @@
 import Decimal from "decimal.js";
 import React from "react"
+import Redux from "redux"
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { AnalyticEvent } from "../state/cosy";
 import "./preview.css"
+import { addAnalytic } from "../actions/cosy";
 
 export type PreviewProps = {
     imageSrc: string;
@@ -25,6 +28,7 @@ type DispatchProps = {
 type Props = ComponentProps & StateProps & DispatchProps;
 
 class Preview extends React.Component<Props> {
+
     render() {
         const { prev } = this.props;
         return <NavLink className="preview" to={`${window.location.pathname}/${prev.link}`}>
@@ -39,7 +43,7 @@ class Preview extends React.Component<Props> {
 const mapStateToProps = () => ({
 })
 
-const mapDispatchToProps = () => ({
+const mapDispatchToProps = (dispatch: Redux.Dispatch) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Preview);

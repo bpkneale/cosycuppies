@@ -1,13 +1,16 @@
-import { CakeOrder, CartItem, CupcakeOrder } from "../state/cosy"
+import { AnalyticEvent, CakeOrder, CartItem, CupcakeOrder } from "../state/cosy"
 
 export const ADD_TO_CART = 'ADD_TO_CART'
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
 export const CLEAR_TOAST = 'CLEAR_TOAST'
+export const ADD_ANALYTIC = 'ADD_ANALYTIC'
+export const CLEAR_ANALYTICS = 'CLEAR_ANALYTICS'
 
 export type CosyAction = {
     type: string;
     item?: CartItem;
     index?: number;
+    event?: AnalyticEvent;
 }
 
 export const addToCart = (item: CartItem) => ({
@@ -22,4 +25,13 @@ export const removeCartItem = (index: number) => ({
 
 export const clearToast = () => ({
     type: CLEAR_TOAST
+})
+
+export const addAnalytic = (event: AnalyticEvent) => ({
+    type: ADD_ANALYTIC,
+    event
+})
+
+export const clearAnalytics = () => ({
+    type: ADD_ANALYTIC
 })

@@ -29,7 +29,13 @@ export type CakeOrder = BaseOrder & {
     box: boolean;
 }
 
+export type AnalyticEvent = {
+    action: string;
+    data: {[key: string]: any};
+}
+
 export type CosyState = {
     cart: CartContents;
     toast?: string;
+    analytics: AnalyticEvent[];
 }

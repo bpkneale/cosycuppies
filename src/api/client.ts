@@ -1,8 +1,19 @@
 import axios, { AxiosInstance } from "axios"
 import luxon from "luxon";
 import { CartContents } from "../state/cosy"
+import { v4 } from "uuid";
 
 const DefaultApiBase = "https://api.cosycuppies.com.au";
+const UniqueId = v4();
+
+export type Analytics = {
+    payload: {
+        id: string;
+        host: string;
+        action: string;
+        [key: string]: any;
+    }
+}
 
 export type CartSubmit = {
     email: string;
@@ -28,6 +39,24 @@ export class ApiClient {
     constructor(apiBase: string = DefaultApiBase, io: AxiosInstance = axios) {
         this.apiBase = apiBase;
         this.io = io ?? axios;
+    }
+
+    async submitAnalytics(action: string, data: {[key: string]: any}): Promise<any> {
+        const analytics: Analytics = {
+            payload: {
+                id: UniqueId,
+                host: window.location.host,
+                action,
+                ...data
+            }
+        }
+        try {
+            const resp = await this.io.post(`${this.apiBase}/analytics`, analytics);
+            console.info({resp});
+        } catch(err) {
+            console.error({err});
+        }
+        return {};
     }
 
     async submitCart(cart: CartSubmit): Promise<Reply> {

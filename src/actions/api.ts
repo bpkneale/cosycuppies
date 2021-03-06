@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ApiClient, CartSubmit } from "../api/client";
+import { Analytics, ApiClient, CartSubmit } from "../api/client";
 
 export const submitCart = createAsyncThunk('api/cart/submit', async (cart: CartSubmit) => {
     const client = new ApiClient();

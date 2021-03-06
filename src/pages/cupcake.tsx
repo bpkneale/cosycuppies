@@ -1,13 +1,17 @@
 import React from "react"
+import Redux from "redux";
 import { connect } from "react-redux";
 import { Carousel } from "react-responsive-carousel";
 import { Redirect } from "react-router";
 import { CupcakeConfiguration } from "../components/cupcakeconfiguration";
 import { UpButton } from "../components/upbutton";
 import { CupcakePreview, Lookup } from "../data/cupcakes";
+import { AnalyticEvent } from "../state/cosy";
 import { getTopLocation } from "../utils/location"
 import { BasePage } from "./base";
 import "./cupcake.css"
+import { addAnalytic } from "../actions/cosy";
+import { DateTime } from "luxon";
 
 type ComponentProps = {
 }
@@ -16,11 +20,24 @@ type StateProps = {
 }
 
 type DispatchProps = {
+    addAnalyticEvent: (event: AnalyticEvent) => void;
 }
 
 type Props = ComponentProps & StateProps & DispatchProps;
 
 class CupcakeUnc extends BasePage<Props> {
+    componentDidMount() {
+        const { addAnalyticEvent } = this.props;
+        const cc = Lookup(getTopLocation())
+        addAnalyticEvent({
+            action: "preview",
+            data: {
+                timestamp: DateTime.local().toISO(),
+                title: cc?.title,
+                link: cc?.link
+            }
+        })
+    }
 
     renderCupcakeImages(cc: CupcakePreview) {
         if(cc.carousel) {
@@ -67,7 +84,8 @@ class CupcakeUnc extends BasePage<Props> {
 const mapStateToProps = () => ({
 })
 
-const mapDispatchToProps = () => ({
+const mapDispatchToProps = (dispatch: Redux.Dispatch) => ({
+    addAnalyticEvent: (event: AnalyticEvent) => dispatch(addAnalytic(event))
 })
 
 export const Cupcake = connect(mapStateToProps, mapDispatchToProps)(CupcakeUnc);
