@@ -81,6 +81,7 @@ export const CupcakePreviews: CupcakePreview[] = [
         title: "Baby Shower",
         imageSrc: "/assets/cupcakes/baby-shower/1.jpg",
         link: CupcakeLinks.BabyShower,
+        hasTopper: true,
         basePrice: ComplexSwirlPrice.plus(1.4),
         description: "Gorgeous colours and swirls to celebrate a baby shower. Includes `Oh Baby` toppers.",
         carousel: [
