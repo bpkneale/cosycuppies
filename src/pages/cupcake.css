@@ -16,7 +16,7 @@
 
     div.cupcake-details img,
     div.carousel-container {
-        max-width: 80vw;
+        max-width: 100%;
     }
 }
 
