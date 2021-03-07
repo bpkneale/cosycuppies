@@ -7,6 +7,7 @@ import { getVisitorInfo } from "../utils/analytics";
 import "./home.css"
 import { ApiClient } from "../api/client";
 import { CosyState } from "../state/cosy";
+import { isMobileDevice } from "../utils/device";
 
 type ComponentProps = {
 }
@@ -19,35 +20,72 @@ type DispatchProps = {
 
 type Props = ComponentProps & StateProps & DispatchProps;
 
+type DisplayItem = {
+    src: string;
+    text: string;
+}
+
+const DisplayItems: DisplayItem[] = [
+    {
+        src: "/assets/cupcakes/forest/1.jpg",
+        text: "Bespoke hand-made cupcakes for any occasion"
+    },
+    {
+        src: "/assets/carousel/6.jpg",
+        text: "Add a Wow factor to your next celebration"
+    },
+    {
+        src: "/assets/carousel/5.jpg",
+        text: "Customisable flavours, swirls, and more"
+    },
+    {
+        src: "/assets/cupcakes/valentines/4.jpg",
+        text: "Made with care in The Vines, Perth"
+    },
+    {
+        src: "/assets/carousel/4.jpg",
+        text: "Perfect for birthdays, celebrations, and more"
+    },
+    {
+        src: "/assets/cakes/blue.jpg",
+        text: "Not just cupcakes!"
+    }
+]
+
 class HomePage extends BasePage<Props> {
 
-    render() {
+    renderMobile() {
+        return <div className="home base-page" ref={ref => this.container = ref}>
+            <div className="mobile-container">
+                {DisplayItems.map(i => (
+                    <div key={i.src}>
+                        <img src={i.src} alt="Cupcake image" />
+                        <p>{i.text}</p>
+                    </div>
+                ))}
+            <p>Use the menu on the left for more</p>
+            </div>
+        </div>
+    }
+
+    renderDesktop() {
         return <div className="home base-page" ref={ref => this.container = ref}>
             <div className="carousel-container">
                 <Carousel className="carousel" autoPlay={true} infiniteLoop={true} interval={5000}>
-                    <div>
-                        <img src="/assets/cupcakes/forest/1.jpg" />
-                        <p>Bespoke hand-made cupcakes for any occasion</p>
-                    </div>
-                    <div>
-                        <img src="/assets/carousel/5.jpg" />
-                        <p>Customisable flavours, swirls, and more</p>
-                    </div>
-                    <div>
-                        <img src="/assets/cupcakes/valentines/4.jpg" />
-                        <p>Made with care in The Vines, Perth</p>
-                    </div>
-                    <div>
-                        <img src="/assets/carousel/4.jpg" />
-                        <p>Perfect for birthdays, celebrations, and more</p>
-                    </div>
-                    <div>
-                        <img src="/assets/cakes/blue.jpg" />
-                        <p>Not just cupcakes!</p>
-                    </div>
+                    {DisplayItems.map(i => (
+                        <div key={i.src}>
+                            <img src={i.src} alt="Cupcake image" />
+                            <p>{i.text}</p>
+                        </div>
+                    ))}
                 </Carousel>
             </div>
         </div>
+    }
+
+    render() {
+        const isMobile = isMobileDevice();
+        return isMobile ? this.renderMobile() : this.renderDesktop();
     }
 }
 

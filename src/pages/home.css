@@ -1,18 +1,7 @@
-@media screen and (max-width: 1024px) {
-    .carousel .thumbs-wrapper {
-        display: none;
-    }
-
-    div.home:first-child {
-        margin-top: 2em;
-    }
-}
-
 div.home {
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: space-around;
 }
 
 div.home > div.carousel-container {
@@ -21,7 +10,24 @@ div.home > div.carousel-container {
     max-width: 90vw;
 }
 
-div.home > div.carousel-container img {
+div.home > div.mobile-container {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    max-width: 100vw;
+    padding: -0.5em;
+}
+
+div.home > div.mobile-container img {
+    border-radius: 1em;
+    box-shadow: 0 4px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+div.home > div.mobile-container p {
+    text-align: center;
+}
+
+div.home > div img {
     max-width: 100%;
 }
 
