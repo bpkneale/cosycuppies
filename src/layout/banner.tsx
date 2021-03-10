@@ -1,4 +1,5 @@
 import React from "react"
+import Redux from "redux"
 import { connect } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import { CartShortcut } from "../components/cartshortcut";
@@ -7,6 +8,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import MenuOpenIcon from '@material-ui/icons/MenuOpen';
 
 import "./banner.css"
+import { AnalyticEvent } from "../state/cosy";
+import { addAnalytic } from "../actions/cosy";
+import { DateTime } from "luxon";
 
 type ComponentProps = {
 }
@@ -15,6 +19,7 @@ type StateProps = {
 }
 
 type DispatchProps = {
+    addAnalyticEvent: (event: AnalyticEvent) => void;
 }
 
 type Props = ComponentProps & StateProps & DispatchProps;
@@ -24,7 +29,9 @@ type State = {
     drawerOpen: boolean;
 }
 
-const Links = (onClick?: () => void) => {
+const test: React.MouseEventHandler<HTMLAnchorElement> = (e) => {}
+
+const Links = (onClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void) => {
     return <React.Fragment>
         <NavLink onClick={onClick} exact to="/">Home</NavLink>
         <NavLink onClick={onClick} to="/cupcakes">Cupcakes</NavLink>
@@ -57,6 +64,19 @@ class Banner extends React.Component<Props, State> {
         this.setState({mobile: isMobileDevice()})
     }
 
+    onNavClick(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
+        const { addAnalyticEvent } = this.props;
+        const link = (e.target as any).innerText;
+        addAnalyticEvent({
+            action: "link",
+            data: {
+                timestamp: DateTime.local().toISO(),
+                link
+            }
+        })
+        this.setState({drawerOpen: false})
+    }
+
     burgerMenu() {
         const { drawerOpen } = this.state;
         return <span className="burger-menu" onClick={() => this.setState({drawerOpen: !drawerOpen})}>
@@ -72,7 +92,7 @@ class Banner extends React.Component<Props, State> {
             </div>
             <div className={`primary-light navigation nav-drawer ${navOpen ? "open" : "closed"}`}>
                 {this.burgerMenu()}
-                {Links(() => this.setState({drawerOpen: false}))}
+                {Links(this.onNavClick.bind(this))}
             </div>
             <CartShortcut />
         </div>
@@ -86,7 +106,7 @@ class Banner extends React.Component<Props, State> {
                     <h1>Stephanie's cosy cuppies, and more!</h1>
                 </div>
                 <div className="navigation">
-                    {Links()}
+                    {Links(this.onNavClick.bind(this))}
                 </div>
             </div>
             <CartShortcut />
@@ -103,7 +123,8 @@ class Banner extends React.Component<Props, State> {
 const mapStateToProps = () => ({
 })
 
-const mapDispatchToProps = () => ({
+const mapDispatchToProps = (dispatch: Redux.Dispatch) => ({
+    addAnalyticEvent: (event: AnalyticEvent) => dispatch(addAnalytic(event))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Banner);
