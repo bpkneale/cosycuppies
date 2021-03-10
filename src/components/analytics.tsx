@@ -35,11 +35,22 @@ class AnalyticsUnc extends React.Component<Props> {
         this._timeout = window.setTimeout(this.analyticsInterval.bind(this), 30000);
     }
 
-    async componentDidMount() {
+    componentDidUpdate() {
+        const { events, clearAnalyticEvents } = this.props;
+        if(events.length > 0) {
+            const client = new ApiClient();
+            for(const event of events) {
+                client.submitAnalytics(event.action, event.data);
+            }
+            clearAnalyticEvents();
+        }
+    }
+
+    componentDidMount() {
         const visitor = getVisitorInfo();
         const client = new ApiClient();
-        await client.submitAnalytics("visitor", visitor);
-        this._timeout = window.setTimeout(this.analyticsInterval.bind(this), 30000);
+        client.submitAnalytics("visitor", visitor);
+        // this._timeout = window.setTimeout(this.analyticsInterval.bind(this), 30000);
     }
 
     componentWillUnmount() {
