@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { render } from "react-snapshot";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -8,7 +9,7 @@ import store from './store';
 import { MuiThemeProvider } from "@material-ui/core"
 import { Theme } from "./utils/theme"
 
-ReactDOM.render(
+render(
   <React.StrictMode>
     <Provider store={store}>
       <MuiThemeProvider theme={Theme}>
