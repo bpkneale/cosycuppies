@@ -1,10 +1,17 @@
 import axios, { AxiosInstance } from "axios"
 import luxon from "luxon";
 import { CartContents } from "../state/cosy"
-import { v4 } from "uuid";
+import 'react-native-get-random-values';
 
 const DefaultApiBase = "https://api.cosycuppies.com.au";
-const UniqueId = v4();
+let UniqueId: string;
+
+try {
+    const { v4 } = require("uuid");
+    UniqueId = v4();
+} catch(err) {
+    UniqueId = "4"; // Determined by a fair dice roll. Guaranteed to be unique
+}
 
 export type Analytics = {
     payload: {
