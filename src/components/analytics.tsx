@@ -21,6 +21,7 @@ type Props = ComponentProps & StateProps & DispatchProps;
 
 class AnalyticsUnc extends React.Component<Props> {
     _timeout: number | null = null;
+    _enable: boolean = !window.location.host.includes("localhost")
 
     async analyticsInterval() {
         const { events, clearAnalyticEvents } = this.props;
@@ -29,7 +30,9 @@ class AnalyticsUnc extends React.Component<Props> {
             const client = new ApiClient();
             const data = [...events];
             clearAnalyticEvents();
-            await client.submitAnalytics("bulk", data);
+            if(this._enable) {
+                await client.submitAnalytics("bulk", data);   
+            }
         }
 
         this._timeout = window.setTimeout(this.analyticsInterval.bind(this), 30000);
@@ -39,8 +42,10 @@ class AnalyticsUnc extends React.Component<Props> {
         const { events, clearAnalyticEvents } = this.props;
         if(events.length > 0) {
             const client = new ApiClient();
-            for(const event of events) {
-                client.submitAnalytics(event.action, event.data);
+            if(this._enable) {
+                for(const event of events) {
+                    client.submitAnalytics(event.action, event.data);
+                }
             }
             clearAnalyticEvents();
         }
@@ -49,7 +54,9 @@ class AnalyticsUnc extends React.Component<Props> {
     componentDidMount() {
         const visitor = getVisitorInfo();
         const client = new ApiClient();
-        client.submitAnalytics("visitor", visitor);
+        if(this._enable) {
+            client.submitAnalytics("visitor", visitor);
+        }
         // this._timeout = window.setTimeout(this.analyticsInterval.bind(this), 30000);
     }
 
