@@ -1,7 +1,7 @@
 import Decimal from "decimal.js";
 import { PreviewProps } from "../components/preview";
 
-enum CupcakeLinks {
+export enum CupcakeLinks {
     Custom = "custom",
     EnchantedForest = "enchanted-forest",
     BabyBlue = "baby-blue",
@@ -61,6 +61,7 @@ export const CupcakePreviews: CupcakePreview[] = [
     {
         title: "Custom",
         imageSrc: "/assets/etc/custom.png",
+        imageAlt: "Placeholder for a custom cupcake",
         link: CupcakeLinks.Custom,
         basePrice: null,
         description: "Have something in mind or seen a design you like? Let me know"
@@ -68,6 +69,7 @@ export const CupcakePreviews: CupcakePreview[] = [
     {
         title: "Enchanted Forest",
         imageSrc: "/assets/cupcakes/forest/1.jpg",
+        imageAlt: "Cupcake with turqoise and pink swirls decorated with butterflies and sprinkles",
         link: CupcakeLinks.EnchantedForest,
         basePrice: ComplexSwirlPrice,
         description: "A whimsical mix of colours and butterflies",
@@ -80,6 +82,7 @@ export const CupcakePreviews: CupcakePreview[] = [
     {
         title: "Baby Shower",
         imageSrc: "/assets/cupcakes/baby-shower/1.jpg",
+        imageAlt: "Cupcake with assortment of swirls of baby blue, yellow, purple and pink, decorated with sprinkles and `oh baby` toppers",
         link: CupcakeLinks.BabyShower,
         hasTopper: true,
         basePrice: ComplexSwirlPrice.plus(1.4),
@@ -95,6 +98,7 @@ export const CupcakePreviews: CupcakePreview[] = [
     {
         title: "Mouse",
         imageSrc: "/assets/cupcakes/mouse/2.jpg",
+        imageAlt: "Pink and white, and yellow and red cupcakes with fondant mouse ears",
         link: CupcakeLinks.Mouse,
         basePrice: ComplexSwirlPrice,
         description: "Beautiful mouse themed cupcakes with fondant ears",
@@ -108,6 +112,7 @@ export const CupcakePreviews: CupcakePreview[] = [
     {
         title: "Valentines",
         imageSrc: "/assets/cupcakes/valentines/4.jpg",
+        imageAlt: "Valentines themed cupcakes with pink, red, and white swirls and love heart toppers",
         link: CupcakeLinks.Valentines,
         hasTopper: true,
         basePrice: ComplexSwirlPrice.plus(1.4),
@@ -123,6 +128,7 @@ export const CupcakePreviews: CupcakePreview[] = [
     {
         title: "Halloween",
         imageSrc: "/assets/cupcakes/halloween/1.jpg",
+        imageAlt: "Green and black, and pink and black swirl cupcakes with colourful sprinkles and edible eyes",
         link: CupcakeLinks.Halloween,
         basePrice: DefaultBasePrice,
         description: "Spooky and scary cupcakes for a halloween celebration",
@@ -136,6 +142,7 @@ export const CupcakePreviews: CupcakePreview[] = [
     {
         title: "Nude",
         imageSrc: "/assets/cupcakes/box-nude.jpg",
+        imageAlt: "Cupcake with a natural skin tone colour swirl",
         link: CupcakeLinks.Nude,
         basePrice: DefaultBasePrice,
         description: "A naturally beautiful and classic colour",
@@ -149,6 +156,7 @@ export const CupcakePreviews: CupcakePreview[] = [
     {
         title: "Lavender",
         imageSrc: "/assets/cupcakes/lavender/1.jpg",
+        imageAlt: "Cupcake with a deep lavender tone colour swirl",
         link: CupcakeLinks.Lavender,
         basePrice: DefaultBasePrice,
         description: "Deep lavender colour with rose swirl",
@@ -162,6 +170,7 @@ export const CupcakePreviews: CupcakePreview[] = [
     {
         title: "Christmas",
         imageSrc: "/assets/cupcakes/xmas/1.jpg",
+        imageAlt: "Red and green swirl cupcakes with christmas sprinkles. Swirl shapes such as christmas tree, bon bons, and mixed",
         link: CupcakeLinks.Christmas,
         basePrice: ComplexSwirlPrice,
         description: "Festive red and green with beautiful sprinkles",
@@ -176,6 +185,7 @@ export const CupcakePreviews: CupcakePreview[] = [
     {
         title: "Bouquet",
         imageSrc: "/assets/cupcakes/bouquet/1.jpg",
+        imageAlt: "Cupcakes with flower coloured and shaped swirls, arranged like a bouquet of flowers.",
         link: CupcakeLinks.Bouquet,
         basePrice: DefaultBasePrice,
         description: "Arrangement of flower themed cupcakes in a bouquet, perfect for valentines day",

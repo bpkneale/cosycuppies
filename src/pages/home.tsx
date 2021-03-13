@@ -7,6 +7,8 @@ import "./home.css"
 import { CosyState } from "../state/cosy";
 import { isMobileDevice } from "../utils/device";
 import { Helmet } from "react-helmet";
+import { CupcakePreviews, CupcakeLinks } from "../data/cupcakes"
+import { Cakes, CakeIds } from "../data/cakes"
 
 type ComponentProps = {
 }
@@ -22,14 +24,14 @@ type Props = ComponentProps & StateProps & DispatchProps;
 type DisplayItem = {
     src: string;
     text: string;
-    alt: string;
+    alt?: string;
 }
 
 const DisplayItems: DisplayItem[] = [
     {
         src: "/assets/cupcakes/forest/1.jpg",
         text: "Bespoke hand-made cupcakes for any occasion",
-        alt: "Cupcake with turqoise and pink swirls decorated with butterflies and sprinkles"
+        alt: CupcakePreviews.find(p => p.link === CupcakeLinks.EnchantedForest)?.imageAlt
     },
     {
         src: "/assets/carousel/6.jpg",
@@ -39,22 +41,22 @@ const DisplayItems: DisplayItem[] = [
     {
         src: "/assets/carousel/5.jpg",
         text: "Customisable flavours, swirls, toppers, and more",
-        alt: "Pink and white, and yellow and red cupcakes with fondant mouse ears"
+        alt: CupcakePreviews.find(p => p.link === CupcakeLinks.Mouse)?.imageAlt
     },
     {
         src: "/assets/cupcakes/valentines/4.jpg",
         text: "Made with care in The Vines, Perth",
-        alt: "Valentines themed cupcakes with pink, red, and white swirls and love heart toppers"
+        alt: CupcakePreviews.find(p => p.link === CupcakeLinks.Valentines)?.imageAlt
     },
     {
         src: "/assets/carousel/4.jpg",
         text: "Perfect for birthdays, celebrations, and more",
-        alt: "A boxed set of cupcakes ready for customer collection"
+        alt: "A boxed set of cupcakes ready for for the customer"
     },
     {
         src: "/assets/cakes/blue.jpg",
         text: "Not just cupcakes!",
-        alt: "Blue and black themed tall cake topped with swirls and decorated with butterflies and silver"
+        alt: Cakes.find(p => p.link === CakeIds.Blue)?.imageAlt
     }
 ]
 
