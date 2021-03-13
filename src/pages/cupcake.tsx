@@ -12,6 +12,7 @@ import { BasePage } from "./base";
 import "./cupcake.css"
 import { addAnalytic } from "../actions/cosy";
 import { DateTime } from "luxon";
+import { Helmet } from "react-helmet";
 
 type ComponentProps = {
 }
@@ -63,6 +64,7 @@ class CupcakeUnc extends BasePage<Props> {
             return <Redirect to="/not-found" />
         }
         return <div className="cupcake base-page" ref={ref => this.container = ref}>
+            <Helmet title="Cupcakes - Cosy Cuppies" />
             <div className="cupcake-nav">
                 <UpButton />
                 <h2>{cc.title}</h2>

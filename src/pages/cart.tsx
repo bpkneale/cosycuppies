@@ -8,6 +8,7 @@ import { SubmitCart } from "../components/submitcart";
 import Decimal from "decimal.js";
 import { EstimateCost } from "../utils/cost";
 import { BasePage } from "./base";
+import { Helmet } from "react-helmet";
 
 type ComponentProps = {
 }
@@ -41,6 +42,7 @@ class CartUnc extends BasePage<Props> {
         const { cart } = this.props;
         const total = this.estimatedTotal();
         return <div className="shopping-cart base-page" ref={ref => this.container = ref}>
+            <Helmet title="Cart - Cosy Cuppies" />
             <h2>Shopping Cart</h2>
             <div className="cart-container">
                 {cart.length === 0 ? 

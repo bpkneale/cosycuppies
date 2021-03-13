@@ -18,6 +18,10 @@ div.home > div.mobile-container {
     padding: -0.5em;
 }
 
+div.home p {
+    text-align: center;
+}
+
 div.home > div.mobile-container img {
     border-radius: 1em;
     box-shadow: 0 4px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 10px 0 rgba(0, 0, 0, 0.19);

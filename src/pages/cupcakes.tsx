@@ -1,4 +1,5 @@
 import React from "react"
+import { Helmet } from "react-helmet";
 import { connect } from "react-redux";
 import Preview from "../components/preview";
 import { CupcakePreviews } from "../data/cupcakes"
@@ -18,6 +19,7 @@ type Props = ComponentProps & StateProps & DispatchProps;
 class Cupcakes extends BasePage<Props> {
     render() {
         return <div className="preview-container base-page" ref={ref => this.container = ref}>
+            <Helmet title="Cupcakes - Cosy Cuppies" />
             {CupcakePreviews.map(p => <Preview key={p.imageSrc} prev={p} />)}
         </div>
     }

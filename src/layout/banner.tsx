@@ -88,7 +88,7 @@ class Banner extends React.Component<Props, State> {
         return <div className="primary-light banner">
             {this.burgerMenu()}
             <div>
-                <h1>Stephanie's cosy cuppies, and more!</h1>
+                <h1>Cosy Cuppies</h1>
             </div>
             <div className={`primary-light navigation nav-drawer ${navOpen ? "open" : "closed"}`}>
                 {this.burgerMenu()}
@@ -103,7 +103,7 @@ class Banner extends React.Component<Props, State> {
             <img src="/assets/etc/Logo-crop-whitebg.png" alt="Logo"></img>
             <div className="title-nav-container">
                 <div>
-                    <h1>Stephanie's cosy cuppies, and more!</h1>
+                    <h1>Stephanie's Cosy Cuppies, and more!</h1>
                 </div>
                 <div className="navigation">
                     {Links(this.onNavClick.bind(this))}

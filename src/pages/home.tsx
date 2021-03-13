@@ -8,6 +8,7 @@ import "./home.css"
 import { ApiClient } from "../api/client";
 import { CosyState } from "../state/cosy";
 import { isMobileDevice } from "../utils/device";
+import { Helmet } from "react-helmet";
 
 type ComponentProps = {
 }
@@ -56,6 +57,7 @@ class HomePage extends BasePage<Props> {
 
     renderMobile() {
         return <div className="home base-page" ref={ref => this.container = ref}>
+            <p>Beautiful hand-made cupcakes and more, made fresh in The Vines, Perth. Delivery available!</p>
             <div className="mobile-container">
                 {DisplayItems.map(i => (
                     <div key={i.src}>
@@ -70,6 +72,8 @@ class HomePage extends BasePage<Props> {
 
     renderDesktop() {
         return <div className="home base-page" ref={ref => this.container = ref}>
+            <Helmet title="Home - Cosy Cuppies" />
+            <p>Beautiful hand-made cupcakes and more, made fresh in The Vines, Perth. Delivery available!</p>
             <div className="carousel-container">
                 <Carousel className="carousel" autoPlay={true} infiniteLoop={true} interval={5000}>
                     {DisplayItems.map(i => (
