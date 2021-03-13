@@ -98,7 +98,7 @@ class Banner extends React.Component<Props, State> {
 
     renderDesktop() {
         return <div className="primary-light banner">
-            <img src="/assets/etc/Logo-crop-whitebg.png" alt="Logo"></img>
+            <img src="/assets/etc/Logo-crop-whitebg-banner.jpg" alt="Logo"></img>
             <div className="title-nav-container">
                 <div>
                     <h1>Stephanie's Cosy Cuppies, and more!</h1>

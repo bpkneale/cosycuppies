@@ -68,7 +68,7 @@ export const CupcakePreviews: CupcakePreview[] = [
     },
     {
         title: "Enchanted Forest",
-        imageSrc: "/assets/cupcakes/forest/1.jpg",
+        imageSrc: "/assets/cupcakes/forest/thumb.jpg",
         imageAlt: "Cupcake with turqoise and pink swirls decorated with butterflies and sprinkles",
         link: CupcakeLinks.EnchantedForest,
         basePrice: ComplexSwirlPrice,
@@ -81,7 +81,7 @@ export const CupcakePreviews: CupcakePreview[] = [
     },
     {
         title: "Baby Shower",
-        imageSrc: "/assets/cupcakes/baby-shower/1.jpg",
+        imageSrc: "/assets/cupcakes/baby-shower/thumb.jpg",
         imageAlt: "Cupcake with assortment of swirls of baby blue, yellow, purple and pink, decorated with sprinkles and `oh baby` toppers",
         link: CupcakeLinks.BabyShower,
         hasTopper: true,
@@ -97,7 +97,7 @@ export const CupcakePreviews: CupcakePreview[] = [
     },
     {
         title: "Mouse",
-        imageSrc: "/assets/cupcakes/mouse/2.jpg",
+        imageSrc: "/assets/cupcakes/mouse/thumb.jpg",
         imageAlt: "Pink and white, and yellow and red cupcakes with fondant mouse ears",
         link: CupcakeLinks.Mouse,
         basePrice: ComplexSwirlPrice,
@@ -111,7 +111,7 @@ export const CupcakePreviews: CupcakePreview[] = [
     },
     {
         title: "Valentines",
-        imageSrc: "/assets/cupcakes/valentines/4.jpg",
+        imageSrc: "/assets/cupcakes/valentines/thumb.jpg",
         imageAlt: "Valentines themed cupcakes with pink, red, and white swirls and love heart toppers",
         link: CupcakeLinks.Valentines,
         hasTopper: true,
@@ -127,7 +127,7 @@ export const CupcakePreviews: CupcakePreview[] = [
     },
     {
         title: "Halloween",
-        imageSrc: "/assets/cupcakes/halloween/1.jpg",
+        imageSrc: "/assets/cupcakes/halloween/thumb.jpg",
         imageAlt: "Green and black, and pink and black swirl cupcakes with colourful sprinkles and edible eyes",
         link: CupcakeLinks.Halloween,
         basePrice: DefaultBasePrice,
@@ -141,7 +141,7 @@ export const CupcakePreviews: CupcakePreview[] = [
     },
     {
         title: "Nude",
-        imageSrc: "/assets/cupcakes/box-nude.jpg",
+        imageSrc: "/assets/cupcakes/nude/thumb.jpg",
         imageAlt: "Cupcake with a natural skin tone colour swirl",
         link: CupcakeLinks.Nude,
         basePrice: DefaultBasePrice,
@@ -155,7 +155,7 @@ export const CupcakePreviews: CupcakePreview[] = [
     },
     {
         title: "Lavender",
-        imageSrc: "/assets/cupcakes/lavender/1.jpg",
+        imageSrc: "/assets/cupcakes/lavender/thumb.jpg",
         imageAlt: "Cupcake with a deep lavender tone colour swirl",
         link: CupcakeLinks.Lavender,
         basePrice: DefaultBasePrice,
@@ -169,7 +169,7 @@ export const CupcakePreviews: CupcakePreview[] = [
     },
     {
         title: "Christmas",
-        imageSrc: "/assets/cupcakes/xmas/1.jpg",
+        imageSrc: "/assets/cupcakes/xmas/thumb.jpg",
         imageAlt: "Red and green swirl cupcakes with christmas sprinkles. Swirl shapes such as christmas tree, bon bons, and mixed",
         link: CupcakeLinks.Christmas,
         basePrice: ComplexSwirlPrice,
@@ -184,7 +184,7 @@ export const CupcakePreviews: CupcakePreview[] = [
     },
     {
         title: "Bouquet",
-        imageSrc: "/assets/cupcakes/bouquet/1.jpg",
+        imageSrc: "/assets/cupcakes/bouquet/thumb.jpg",
         imageAlt: "Cupcakes with flower coloured and shaped swirls, arranged like a bouquet of flowers.",
         link: CupcakeLinks.Bouquet,
         basePrice: DefaultBasePrice,
