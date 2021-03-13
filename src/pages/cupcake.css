@@ -49,6 +49,7 @@ div.cupcake > div.cupcake-nav {
 
 div.cupcake > div.cupcake-nav > h2 {
     text-align: center;
+    padding-top: 0.2em;
     /* width: 100%; */
 }
 

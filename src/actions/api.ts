@@ -1,5 +1,5 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Analytics, ApiClient, CartSubmit } from "../api/client";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { ApiClient, CartSubmit } from "../api/client";
 
 export const submitCart = createAsyncThunk('api/cart/submit', async (cart: CartSubmit) => {
     const client = new ApiClient();
@@ -13,10 +13,6 @@ enum ApiState {
     Success,
     Failure
 };
-
-type SubmitCartAction = PayloadAction<{
-    cart: CartSubmit
-}>
 
 export const cartSlice = createSlice({
     name: "cartSubmit",

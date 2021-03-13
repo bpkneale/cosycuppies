@@ -22,7 +22,7 @@ class CartShortcutUnc extends React.Component<Props> {
         const { cart } = this.props;
         return <NavLink to="/cart" className="cart-shortcut">
             {cart.length ? <p>{cart.length}</p> : null}
-            <img src="/assets/etc/shopping-cart.svg"></img>
+            <img alt="Shopping cart link" src="/assets/etc/shopping-cart.svg"></img>
         </NavLink>
     }
 }

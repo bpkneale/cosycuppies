@@ -1,7 +1,6 @@
 import React from "react"
 import { Helmet } from "react-helmet";
 import { connect } from "react-redux";
-import Preview from "../components/preview";
 import * as Data from "../data/cakes";
 import { BasePage } from "./base";
 
@@ -22,7 +21,7 @@ class Cakes extends BasePage<Props> {
             <Helmet title="Cakes - Cosy Cuppies" />
             <h2 className="centre">Cakes coming soon!</h2>
             <div>
-                <img src={Data.Cakes[0].imageSrc} />
+                <img alt="Decorated blue cake" src={Data.Cakes[0].imageSrc} />
             </div>
         </div>
     }

@@ -1,6 +1,7 @@
 import { useHistory, useLocation } from "react-router-dom";
 import "./upbutton.css"
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import { Button } from "@material-ui/core";
 
 type Props = {
     layoutOnly?: boolean;
@@ -16,8 +17,13 @@ export const UpButton = (props: Props) => {
         history.push(splot.join("/"))
     }
 
-    return <div className={`up-button ${props.layoutOnly ? "layout" : ""}`} onClick={onClick}>
-        <ArrowBackIcon />
-        <a className="up-button">Back</a>
-    </div>
+    if(props.layoutOnly) {
+        return <div className="up-button layout"></div>
+    } else {
+        return <Button
+            onClick={onClick} variant="contained" color="primary">
+            <ArrowBackIcon />
+        </Button>
+    }
+
 }

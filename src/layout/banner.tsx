@@ -1,7 +1,7 @@
 import React from "react"
 import Redux from "redux"
 import { connect } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { CartShortcut } from "../components/cartshortcut";
 import { isMobileDevice } from "../utils/device"
 import MenuIcon from '@material-ui/icons/Menu';
@@ -28,8 +28,6 @@ type State = {
     mobile: boolean;
     drawerOpen: boolean;
 }
-
-const test: React.MouseEventHandler<HTMLAnchorElement> = (e) => {}
 
 const Links = (onClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void) => {
     return <React.Fragment>

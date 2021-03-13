@@ -3,9 +3,7 @@ import React from "react"
 import Redux from "redux"
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { AnalyticEvent } from "../state/cosy";
 import "./preview.css"
-import { addAnalytic } from "../actions/cosy";
 
 export type PreviewProps = {
     imageSrc: string;

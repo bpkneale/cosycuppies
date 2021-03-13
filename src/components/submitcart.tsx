@@ -1,8 +1,8 @@
 import React from "react";
-import { submitCart, cartSlice } from "../actions/api";
+import { submitCart } from "../actions/api";
 import { CartSubmit } from "../api/client";
-import { DateTime, Duration } from "luxon";
-import { AppDispatch, useAppDispatch, useAppState } from "../store/index";
+import { DateTime } from "luxon";
+import { useAppDispatch, useAppState } from "../store/index";
 import { useState } from "react";
 import { KeyboardDatePicker } from "@material-ui/pickers";
 import "./submitcart.css"

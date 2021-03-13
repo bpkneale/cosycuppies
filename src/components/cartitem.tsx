@@ -8,7 +8,6 @@ import RemoveShoppingCartIcon from '@material-ui/icons/RemoveShoppingCart';
 import "./cartitem.css"
 import { Button } from "@material-ui/core";
 import { EstimateCost } from "../utils/cost";
-import Decimal from "decimal.js";
 
 type ComponentProps = {
     item: States.CartItem;
@@ -39,7 +38,7 @@ const CupcakeCartItem = (item: States.CupcakeOrder, cartItem: States.CartItem) =
     }
     return <React.Fragment>
         <div className="img-container">
-            <img src={cc.imageSrc} />
+            <img alt={`Cupcake ${cc.title} thumbnail`} src={cc.imageSrc} />
         </div>
         <div className="item-details">
             <p>{cc.title}</p>

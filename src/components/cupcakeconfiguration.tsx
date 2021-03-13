@@ -6,7 +6,7 @@ import { CupcakeFlavour, CupcakeFlavours } from "../data/cupcakeflavours"
 import { addToCart as addToCartAction } from "../actions/cosy"
 import { Quantities, Lookup } from "../data/cupcakes"
 import "./cupcakeconfiguration.css"
-import { CartItem, CupcakeOrder } from "../state/cosy";
+import { CartItem } from "../state/cosy";
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Button from '@material-ui/core/Button';
 import { Checkbox, FormControl, FormControlLabel, FormHelperText, InputLabel, MenuItem, Select, TextField } from '@material-ui/core';

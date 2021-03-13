@@ -1,7 +1,5 @@
-import Redux from "redux";
-import { CartContents, CartItem, CosyState } from "../state/cosy";
+import { CartContents, CosyState } from "../state/cosy";
 import * as Actions from "../actions/cosy";
-import { useSelector } from "react-redux";
 
 export const defaultState: CosyState = {
     cart: [],

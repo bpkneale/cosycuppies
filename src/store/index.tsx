@@ -1,7 +1,7 @@
 import { applyMiddleware, compose, createStore } from "redux";
 import { rootReducer, defaultState } from "../reducers";
 import thunk from "redux-thunk";
-import { useDispatch, useSelector, useStore } from "react-redux";
+import { useDispatch, useStore } from "react-redux";
 import { CosyState } from "../state/cosy";
 
 const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
