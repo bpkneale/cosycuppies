@@ -20,7 +20,7 @@ export const UpButton = (props: Props) => {
     if(props.layoutOnly) {
         return <div className="up-button layout"></div>
     } else {
-        return <Button
+        return <Button aria-label="Go back"
             onClick={onClick} variant="contained" color="primary">
             <ArrowBackIcon />
         </Button>
