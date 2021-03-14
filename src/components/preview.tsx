@@ -33,7 +33,7 @@ class Preview extends React.Component<Props> {
         return <NavLink className="preview" to={`${window.location.pathname}/${prev.link}`}>
             <div className="preview hover-primary-light-bg">
                 <h3>{prev.title}</h3>
-                <img src={prev.imageSrc} alt={prev.imageAlt}></img>
+                <img height="1000" width="1500" src={prev.imageSrc} alt={prev.imageAlt}></img>
             </div>
         </NavLink>
     }

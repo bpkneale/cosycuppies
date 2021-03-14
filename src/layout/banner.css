@@ -120,4 +120,5 @@ div.banner h1 {
 
 div.banner > img {
     height: 100%;
+    width: unset;
 }

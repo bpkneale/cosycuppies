@@ -25,6 +25,8 @@ type DisplayItem = {
     src: string;
     text: string;
     alt?: string;
+    height?: string;
+    width?: string;
 }
 
 const DisplayItems: DisplayItem[] = [
@@ -36,7 +38,9 @@ const DisplayItems: DisplayItem[] = [
     {
         src: "/assets/carousel/6.jpg",
         text: "Add a Wow factor to your next celebration",
-        alt: "72 cupcakes in deep purple and skin colour themed for a 30th birthday with toppers"
+        alt: "72 cupcakes in deep purple and skin colour themed for a 30th birthday with toppers",
+        width: "1980",
+        height: "786"
     },
     {
         src: "/assets/carousel/5.jpg",
@@ -68,7 +72,7 @@ class HomePage extends BasePage<Props> {
             <div className="mobile-container">
                 {DisplayItems.map(i => (
                     <div key={i.src}>
-                        <img src={i.src} alt={i.alt} />
+                        <img height={i.height ?? "1000"} width={i.width ?? "1500"} src={i.src} alt={i.alt} />
                         <p>{i.text}</p>
                     </div>
                 ))}
@@ -85,7 +89,7 @@ class HomePage extends BasePage<Props> {
                 <Carousel className="carousel" autoPlay={true} infiniteLoop={true} interval={5000}>
                     {DisplayItems.map(i => (
                         <div key={i.src}>
-                            <img src={i.src} alt={i.alt} />
+                            <img height={i.height ?? "1000"} width={i.width ?? "1500"} src={i.src} alt={i.alt} />
                             <p>{i.text}</p>
                         </div>
                     ))}
