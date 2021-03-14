@@ -1,4 +1,4 @@
-import { CartContents, CosyState } from "../state/cosy";
+import { AnalyticEvent, CartContents, CosyState } from "../state/cosy";
 import * as Actions from "../actions/cosy";
 
 export const defaultState: CosyState = {
@@ -17,10 +17,19 @@ export const rootReducer = (state: CosyState = defaultState, action: Actions.Cos
             if(action.item) {
                 cart.push(action.item)
                 toast = `Item added to cart`;
+                const event: AnalyticEvent = {
+                    action: "cart-add",
+                    data: {
+                        ...action.item
+                    }
+                }
+                analytics = [...analytics]
+                analytics.push(event);
             }
             return {
                 ...state,
                 toast,
+                analytics,
                 cart
             }
 
