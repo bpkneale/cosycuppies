@@ -88,6 +88,17 @@
     div.banner > .cart-shortcut {
         margin-right: 0.5em;
     }
+
+    div.banner div.img-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    div.banner div.img-container img {
+        height: 25vh;
+        width: auto;
+    }
 }
 
 div.banner div.navigation > a.active {

@@ -90,6 +90,9 @@ class Banner extends React.Component<Props, State> {
             </div>
             <div className={`primary-light navigation nav-drawer ${navOpen ? "open" : "closed"}`}>
                 {this.burgerMenu()}
+                <div className="img-container">
+                    <img src="/assets/etc/Logo-crop-whitebg-banner.jpg" alt="Logo"></img>
+                </div>
                 {Links(this.onNavClick.bind(this))}
             </div>
             <CartShortcut />
