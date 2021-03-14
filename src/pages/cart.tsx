@@ -67,4 +67,4 @@ const mapStateToProps = (state: CosyState) => ({
 const mapDispatchToProps = (dispatch: Redux.Dispatch) => ({
 })
 
-export const Cart = connect<StateProps, DispatchProps, ComponentProps, CosyState>(mapStateToProps, mapDispatchToProps)(CartUnc);
+export default connect<StateProps, DispatchProps, ComponentProps, CosyState>(mapStateToProps, mapDispatchToProps)(CartUnc);

@@ -90,4 +90,4 @@ const mapDispatchToProps = (dispatch: Redux.Dispatch) => ({
     addAnalyticEvent: (event: AnalyticEvent) => dispatch(addAnalytic(event))
 })
 
-export const Cupcake = connect(mapStateToProps, mapDispatchToProps)(CupcakeUnc);
+export default connect(mapStateToProps, mapDispatchToProps)(CupcakeUnc);

@@ -1,26 +1,27 @@
 import './index.css';
 import "./App.css";
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
-import About from './pages/about';
 import Home from './pages/home';
 import Banner from './layout/banner';
-import Contact from './pages/contact';
-import Cakes from './pages/cakes';
-import Cupcakes from './pages/cupcakes';
-import { Cupcake } from "./pages/cupcake";
-import AndMore from './pages/andmore';
-import { NotFound } from './pages/notfound';
-import { Cart } from './pages/cart';
 import { Toast } from './layout/toast';
+import { NotFound } from './pages/notfound';
 import { MuiPickersUtilsProvider } from "@material-ui/pickers"
 import LuxonUtils from '@date-io/luxon';
 import { Analytics } from './components/analytics';
 import ScrollToTop from './scrollToTop';
+
+const About = lazy(() => import('./pages/about'));
+const Contact = lazy(() => import('./pages/contact'));
+const Cakes = lazy(() => import('./pages/cakes'));
+const Cupcakes = lazy(() => import('./pages/cupcakes'));
+const Cupcake = lazy(() => import("./pages/cupcake"));
+const AndMore = lazy(() => import('./pages/andmore'));
+const Cart = lazy(() => import('./pages/cart'));
 
 export default function App() {
   return (
@@ -32,35 +33,37 @@ export default function App() {
           <Toast />
           <div className="content">
             <ScrollToTop>
-              <Switch>
-                <Route path="/cupcakes/:cupcake">
-                  <Cupcake />
-                </Route>
-                <Route path="/cupcakes">
-                  <Cupcakes />
-                </Route>
-                <Route path="/cakes">
-                  <Cakes />
-                </Route>
-                <Route path="/and-more">
-                  <AndMore />
-                </Route>
-                <Route path="/about">
-                  <About />
-                </Route>
-                <Route path="/contact">
-                  <Contact />
-                </Route>
-                <Route path="/cart">
-                  <Cart />
-                </Route>
-                <Route path="/not-found">
-                  <NotFound />
-                </Route>
-                <Route path="/">
-                  <Home />
-                </Route>
-              </Switch>
+              <Suspense fallback={<div></div>}>
+                <Switch>
+                  <Route path="/cupcakes/:cupcake">
+                    <Cupcake />
+                  </Route>
+                  <Route path="/cupcakes">
+                    <Cupcakes />
+                  </Route>
+                  <Route path="/cakes">
+                    <Cakes />
+                  </Route>
+                  <Route path="/and-more">
+                    <AndMore />
+                  </Route>
+                  <Route path="/about">
+                    <About />
+                  </Route>
+                  <Route path="/contact">
+                    <Contact />
+                  </Route>
+                  <Route path="/cart">
+                    <Cart />
+                  </Route>
+                  <Route path="/not-found">
+                    <NotFound />
+                  </Route>
+                  <Route path="/">
+                    <Home />
+                  </Route>
+                </Switch>
+              </Suspense>
             </ScrollToTop>
           </div>
         </div>
