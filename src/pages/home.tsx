@@ -43,6 +43,11 @@ const DisplayItems: DisplayItem[] = [
         height: "786"
     },
     {
+        src: "/assets/carousel/7.jpg",
+        text: "Available for delivery",
+        alt: "6 cupcakes with various swirls and pastel colours and sprinkles"
+    },
+    {
         src: "/assets/carousel/5.jpg",
         text: "Customisable flavours, swirls, toppers, and more",
         alt: CupcakePreviews.find(p => p.link === CupcakeLinks.Mouse)?.imageAlt
