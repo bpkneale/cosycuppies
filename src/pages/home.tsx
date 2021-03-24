@@ -36,6 +36,11 @@ const DisplayItems: DisplayItem[] = [
         alt: CupcakePreviews.find(p => p.link === CupcakeLinks.EnchantedForest)?.imageAlt
     },
     {
+        src: "/assets/carousel/8.jpg",
+        text: "Available for delivery",
+        alt: CupcakePreviews.find(p => p.link === CupcakeLinks.EnchantedForest)?.imageAlt
+    },
+    {
         src: "/assets/carousel/6.jpg",
         text: "Add a Wow factor to your next celebration",
         alt: "72 cupcakes in deep purple and skin colour themed for a 30th birthday with toppers",
@@ -43,8 +48,8 @@ const DisplayItems: DisplayItem[] = [
         height: "786"
     },
     {
-        src: "/assets/carousel/7.jpg",
-        text: "Available for delivery",
+        src: "/assets/carousel/9.jpg",
+        text: "Made with care in The Vines, Perth",
         alt: "6 cupcakes with various swirls and pastel colours and sprinkles"
     },
     {
@@ -54,12 +59,12 @@ const DisplayItems: DisplayItem[] = [
     },
     {
         src: "/assets/cupcakes/valentines/4.jpg",
-        text: "Made with care in The Vines, Perth",
+        text: "Perfect for birthdays, celebrations, and more",
         alt: CupcakePreviews.find(p => p.link === CupcakeLinks.Valentines)?.imageAlt
     },
     {
         src: "/assets/carousel/4.jpg",
-        text: "Perfect for birthdays, celebrations, and more",
+        text: "Ready for your next occasion",
         alt: "A boxed set of cupcakes ready for for the customer"
     },
     {
