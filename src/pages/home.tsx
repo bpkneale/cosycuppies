@@ -53,8 +53,13 @@ const DisplayItems: DisplayItem[] = [
         alt: "6 cupcakes with various swirls and pastel colours and sprinkles"
     },
     {
-        src: "/assets/carousel/5.jpg",
+        src: "/assets/carousel/10.jpg",
         text: "Customisable flavours, swirls, toppers, and more",
+        alt: "A series of cupcakes with ombre swirls and butterflies"
+    },
+    {
+        src: "/assets/carousel/5.jpg",
+        text: "Get in touch with your occasion or idea",
         alt: CupcakePreviews.find(p => p.link === CupcakeLinks.Mouse)?.imageAlt
     },
     {
