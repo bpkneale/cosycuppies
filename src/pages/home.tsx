@@ -53,7 +53,7 @@ const DisplayItems: DisplayItem[] = [
         alt: "6 cupcakes with various swirls and pastel colours and sprinkles"
     },
     {
-        src: "/assets/carousel/10.jpg",
+        src: "/assets/carousel/11.jpg",
         text: "Customisable flavours, swirls, toppers, and more",
         alt: "A series of cupcakes with ombre swirls and butterflies"
     },
@@ -63,9 +63,9 @@ const DisplayItems: DisplayItem[] = [
         alt: CupcakePreviews.find(p => p.link === CupcakeLinks.Mouse)?.imageAlt
     },
     {
-        src: "/assets/cupcakes/valentines/4.jpg",
+        src: "/assets/carousel/12.jpg",
         text: "Perfect for birthdays, celebrations, and more",
-        alt: CupcakePreviews.find(p => p.link === CupcakeLinks.Valentines)?.imageAlt
+        alt: "Dusty coloured cupcake with butterfly decorations"
     },
     {
         src: "/assets/carousel/4.jpg",
