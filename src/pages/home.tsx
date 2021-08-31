@@ -73,9 +73,9 @@ const DisplayItems: DisplayItem[] = [
         alt: "A boxed set of cupcakes ready for for the customer"
     },
     {
-        src: "/assets/cakes/blue.jpg",
+        src: "/assets/cakes/4.jpg",
         text: "Not just cupcakes!",
-        alt: Cakes.find(p => p.link === CakeIds.Blue)?.imageAlt
+        alt: Cakes.find(p => p.link === CakeIds.PinkBirthday)?.imageAlt
     }
 ]
 

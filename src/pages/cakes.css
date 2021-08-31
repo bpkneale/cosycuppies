@@ -1,0 +1,69 @@
+
+@media screen and (min-width: 1024px) {
+  div.cake-list div.cake-item {
+    margin: 2rem;
+  }
+  
+  div.cake-list div.cake-item img {
+    width: 40vw;
+  }
+  
+  div.cake-list div.cake-item aside {
+    width: 40vw;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  div.cake-list div.cake-item:nth-child(2) {
+    flex-flow: row-reverse;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  div.cake-list div.cake-item {
+    flex-flow: column;
+    align-items: center;
+  }
+  
+  div.cake-list div.cake-item aside {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+div.cake-page {
+  flex-flow: column;
+  padding-bottom: 2rem;
+}
+
+div.cake-list {
+  display: flex;
+  flex-flow: column;
+}
+
+div.cake-list div.cake-item {
+  display: flex;
+  justify-content: space-around;
+}
+
+div.cake-list div.cake-item p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+div.cake-list div.cake-item h3 {
+  margin-block-end: 0.25em;
+}
+
+div.cake-list div.cake-item img {
+  max-width: 85vw;
+  margin: 0.5em;
+  padding: 0.5em;
+  transition: all 0.25s;
+  border-radius: 1em;
+  box-shadow: 0 4px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 10px 0 rgba(0, 0, 0, 0.19);
+}

@@ -1,0 +1,16 @@
+
+div.get-in-contact {
+  padding-bottom: 3rem;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+div.get-in-contact a {
+  color: unset;
+  text-decoration: none;
+}
+
+div.get-in-contact span {
+  text-transform: none;
+}
